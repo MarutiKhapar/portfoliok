@@ -1,469 +1,1320 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maruti Khapare | Growth Manager</title>
-  <meta name="description" content="Maruti Khapare — Growth Manager building scalable marketing systems, SEO strategy, and product-led growth experiences." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Maruti Khapare | Growth Manager" />
-  <meta property="og:description" content="Single-page portfolio for Maruti Khapare, Growth Manager at Megamind Studios." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b0f19" />
-  <style>
-    :root{
-      --bg:#0b0f19;
-      --bg-soft:#111827;
-      --panel:#121a2b;
-      --line:rgba(255,255,255,.08);
-      --text:#f8fafc;
-      --muted:#94a3b8;
-      --accent:#60a5fa;
-      --accent-2:#a78bfa;
-      --card-shadow:0 20px 45px rgba(0,0,0,.28);
-      --radius:24px;
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(167,139,250,.14), transparent 22%),
-        linear-gradient(180deg,#09101a 0%,#0b0f19 100%);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(calc(100% - 32px), var(--max)); margin:0 auto}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(18px);
-      background:rgba(9,16,26,.72);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-wrap{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:16px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.02em;
-    }
-    .brand-badge{
-      width:40px; height:40px; border-radius:14px;
-      display:grid; place-items:center;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:white; box-shadow:var(--card-shadow);
-      font-size:14px;
-    }
-    .nav-links{
-      display:flex; gap:22px; flex-wrap:wrap;
-      color:var(--muted); font-size:14px;
-    }
-    .nav-links a:hover{color:var(--text)}
-    .hero{
-      padding:72px 0 40px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:32px;
-      align-items:center;
-    }
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 14px; border:1px solid var(--line); border-radius:999px;
-      color:#cbd5e1; font-size:13px; background:rgba(255,255,255,.03)
-    }
-    .dot{width:8px;height:8px;border-radius:50%; background:#4ade80; box-shadow:0 0 12px #4ade80}
-    h1{
-      margin:18px 0 14px; font-size:clamp(40px,7vw,76px); line-height:.98; letter-spacing:-.04em;
-    }
-    .gradient{
-      background:linear-gradient(135deg,#fff 0%, #dbeafe 45%, #c4b5fd 100%);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    .lead{
-      color:var(--muted); font-size:18px; max-width:720px;
-    }
-    .hero-cta{
-      display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:14px 18px; border-radius:16px; font-weight:700; transition:.2s ease;
-      border:1px solid var(--line);
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#fff; box-shadow:var(--card-shadow);
-    }
-    .btn.secondary{
-      background:rgba(255,255,255,.03);
-      color:#e2e8f0;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .hero-card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border-radius:30px; padding:24px; box-shadow:var(--card-shadow);
-    }
-    .stat-grid{
-      display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px;
-    }
-    .stat{
-      padding:18px; border-radius:20px; background:rgba(255,255,255,.03); border:1px solid var(--line);
-    }
-    .stat h3{
-      margin:0; font-size:30px; line-height:1; letter-spacing:-.03em;
-    }
-    .stat p{margin:8px 0 0; color:var(--muted); font-size:14px}
-    section{
-      padding:34px 0;
-    }
-    .section-title{
-      margin:0 0 10px; font-size:13px; color:#93c5fd; text-transform:uppercase; letter-spacing:.16em;
-    }
-    .section-head{
-      font-size:clamp(28px,4vw,44px); margin:0 0 12px; letter-spacing:-.03em;
-    }
-    .section-copy{
-      color:var(--muted); max-width:760px; margin:0 0 28px;
-    }
-    .about-grid, .experience-grid, .project-grid, .contact-grid{
-      display:grid; gap:18px;
-    }
-    .about-grid{grid-template-columns:1fr 1fr}
-    .experience-grid{grid-template-columns:1fr}
-    .project-grid{grid-template-columns:repeat(3,1fr)}
-    .contact-grid{grid-template-columns:1fr 1fr}
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--card-shadow);
-    }
-    .list{display:grid; gap:10px; color:#dbeafe}
-    .list span{
-      display:inline-flex; align-items:center; gap:10px; color:#dbeafe;
-    }
-    .list span::before{
-      content:""; width:8px; height:8px; border-radius:50%;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      flex:0 0 auto;
-    }
-    .timeline{
-      display:grid; gap:16px;
-    }
-    .timeline-item{
-      display:grid; grid-template-columns:170px 1fr; gap:22px;
-      padding:22px; border-radius:22px; background:rgba(255,255,255,.03); border:1px solid var(--line);
-    }
-    .timeline-item small{
-      color:#93c5fd; font-weight:700; letter-spacing:.03em;
-    }
-    .role{
-      margin:6px 0 6px; font-size:22px; letter-spacing:-.02em;
-    }
-    .org{color:#cbd5e1; font-weight:700; margin-bottom:10px}
-    .muted{color:var(--muted)}
-    .pill-row{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;
-    }
-    .pill{
-      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
-      background:rgba(255,255,255,.03); color:#dbeafe; font-size:13px; font-weight:600;
-    }
-    .project-card h3{
-      margin:8px 0 10px; font-size:24px; letter-spacing:-.02em;
-    }
-    .project-card p{color:var(--muted)}
-    .project-card .num{
-      color:#93c5fd; font-size:13px; font-weight:800; letter-spacing:.14em;
-    }
-    .contact-card .item{
-      padding:14px 0; border-top:1px solid var(--line);
-    }
-    .contact-card .item:first-child{border-top:none; padding-top:0}
-    .footer{
-      padding:28px 0 44px; color:var(--muted); font-size:14px;
-    }
-    @media (max-width: 980px){
-      .hero-grid, .about-grid, .contact-grid, .project-grid{
-        grid-template-columns:1fr;
-      }
-      .timeline-item{
-        grid-template-columns:1fr;
-      }
-      .nav-wrap{
-        gap:18px; align-items:flex-start; flex-direction:column;
-      }
-    }
-    @media (max-width: 620px){
-      .hero{padding-top:48px}
-      .nav-links{gap:14px}
-      .stat-grid{grid-template-columns:1fr}
-      .btn{width:100%}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maruti Khapare — Growth Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0e12;
+  --bg2: #13141a;
+  --bg3: #1a1b22;
+  --bg4: #22232c;
+  --line: rgba(255,255,255,0.07);
+  --line2: rgba(255,255,255,0.13);
+  --text: #e8e6df;
+  --text2: #9a9896;
+  --text3: #62615e;
+  --accent: #e8b86d;
+  --accent2: #c49a4f;
+  --accent-dim: rgba(232,184,109,0.12);
+  --accent-glow: rgba(232,184,109,0.08);
+  --green: #5fcf8a;
+  --green-dim: rgba(95,207,138,0.1);
+  --blue: #6b9cf8;
+  --blue-dim: rgba(107,156,248,0.1);
+  --r: 10px;
+  --r-sm: 6px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.2rem, 4vw, 3rem);
+  background: rgba(13,14,18,0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.nav-logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 100px;
+  background: var(--accent);
+  color: #0d0e12 !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s !important;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 58px;
+  left: 0;
+  right: 0;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--line2);
+  padding: 1.5rem clamp(1.2rem, 4vw, 3rem);
+  z-index: 199;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ===== LAYOUT ===== */
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 4vw, 3rem);
+}
+
+section { padding: 5rem 0; border-bottom: 1px solid var(--line); }
+section:last-child { border-bottom: none; }
+
+/* ===== HERO ===== */
+#hero {
+  padding-top: calc(58px + 5rem);
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at 30% 30%, rgba(232,184,109,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(232,184,109,0.3);
+  color: var(--accent);
+  background: var(--accent-dim);
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.7s ease forwards;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 1.06;
+  font-weight: 900;
+  margin-bottom: 1.75rem;
+  animation: fadeInUp 0.8s 0.1s ease forwards;
+  opacity: 0;
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+.hero-title .block { display: block; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: var(--text2);
+  max-width: 560px;
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 2.25rem;
+  animation: fadeInUp 0.8s 0.2s ease forwards;
+  opacity: 0;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+  animation: fadeInUp 0.8s 0.3s ease forwards;
+  opacity: 0;
+}
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text2);
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  animation: fadeInUp 0.8s 0.35s ease forwards;
+  opacity: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-gold {
+  background: var(--accent);
+  color: #0d0e12;
+  font-weight: 600;
+}
+.btn-gold:hover { background: #f5c97d; transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line2);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  overflow: hidden;
+  animation: fadeInUp 0.8s 0.45s ease forwards;
+  opacity: 0;
+}
+.stat-block {
+  padding: 1.5rem 1.25rem;
+  border-right: 1px solid var(--line2);
+  background: var(--bg2);
+  transition: background 0.2s;
+}
+.stat-block:last-child { border-right: none; }
+.stat-block:hover { background: var(--bg3); }
+.stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-l {
+  font-size: 0.7rem;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* ===== SECTION HEADER ===== */
+.sec-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.sec-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1.5px;
+  background: var(--accent);
+}
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+.sec-title em { font-style: italic; font-weight: 400; color: var(--text2); }
+.sec-desc {
+  font-size: 0.9rem;
+  color: var(--text2);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* ===== PM NARRATIVE ===== */
+.narrative-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.narr-cell {
+  background: var(--bg2);
+  padding: 1.75rem;
+  transition: background 0.2s;
+}
+.narr-cell:hover { background: var(--bg3); }
+.narr-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.narr-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.narr-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.narr-body {
+  font-size: 0.8rem;
+  color: var(--text2);
+  line-height: 1.75;
+}
+
+/* ===== CASE CARDS ===== */
+.case-grid { display: flex; flex-direction: column; gap: 1px; }
+.case-card {
+  background: var(--bg2);
+  border-radius: 0;
+  padding: 2rem 2.25rem;
+  position: relative;
+  transition: background 0.25s;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+.case-card:first-child { border-radius: var(--r) var(--r) 0 0; }
+.case-card:last-child { border-radius: 0 0 var(--r) var(--r); }
+.case-card:hover { background: var(--bg3); }
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 0.75rem;
+}
+.tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: var(--bg4);
+  color: var(--text3);
+  border: 1px solid var(--line2);
+}
+.tag-accent { background: var(--accent-dim); color: var(--accent); border-color: rgba(232,184,109,0.2); }
+.tag-green { background: var(--green-dim); color: var(--green); border-color: rgba(95,207,138,0.2); }
+.tag-blue { background: var(--blue-dim); color: var(--blue); border-color: rgba(107,156,248,0.2); }
+
+.case-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  line-height: 1.35;
+}
+.case-company {
+  font-size: 0.75rem;
+  color: var(--text3);
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.02em;
+}
+.case-desc {
+  font-size: 0.84rem;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+}
+
+.pm-frames {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 1.1rem;
+}
+.pm-frame {
+  background: var(--bg4);
+  border-radius: var(--r-sm);
+  padding: 0.65rem 0.75rem;
+}
+.pm-frame-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+  margin-bottom: 3px;
+}
+.pm-frame-val {
+  font-size: 0.76rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.outcomes {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.out-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.out-l { font-size: 0.68rem; color: var(--text3); letter-spacing: 0.02em; }
+
+.case-arrow {
+  font-size: 1.2rem;
+  color: var(--text3);
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+.case-card:hover .case-arrow { color: var(--accent); transform: translateX(3px); }
+
+/* ===== SKILLS ===== */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.skill-group {
+  background: var(--bg2);
+  padding: 1.75rem;
+  transition: background 0.2s;
+}
+.skill-group:hover { background: var(--bg3); }
+.sg-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.1rem;
+}
+.sg-icon { font-size: 1.2rem; }
+.sg-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.sg-items { display: flex; flex-direction: column; gap: 0.45rem; }
+.sg-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: var(--text2);
+}
+.sg-item::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text3);
+  flex-shrink: 0;
+}
+
+/* ===== EXPERIENCE TIMELINE ===== */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--line));
+}
+.tl-item {
+  position: relative;
+  padding-bottom: 2.75rem;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.tl-item:first-child .tl-dot { background: var(--accent); }
+.tl-date {
+  font-size: 0.7rem;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+.tl-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.tl-company {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-bottom: 0.65rem;
+  font-weight: 500;
+}
+.tl-desc {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.8;
+}
+.tl-points {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.tl-point {
+  font-size: 0.8rem;
+  color: var(--text2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.65;
+}
+.tl-point::before {
+  content: '→';
+  color: var(--accent);
+  font-size: 0.75rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ===== CERTS ===== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.85rem 1rem;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 0.8rem;
+  color: var(--text2);
+  transition: border-color 0.2s, background 0.2s;
+}
+.cert-card:hover { border-color: var(--line2); background: var(--bg3); color: var(--text); }
+.cert-icon { font-size: 1rem; flex-shrink: 0; }
+
+/* ===== AWARDS ===== */
+.award-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.award-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ===== CONTACT ===== */
+#contact { padding-bottom: 5rem; }
+.contact-card {
+  background: var(--bg2);
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  right: -15%;
+  width: 40%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(232,184,109,0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.contact-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+.contact-note {
+  font-size: 0.87rem;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.contact-links { display: flex; flex-direction: column; gap: 0.6rem; }
+.c-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 0.82rem;
+  color: var(--text2);
+  transition: all 0.2s;
+}
+.c-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+.c-link-icon { font-size: 1rem; flex-shrink: 0; }
+.c-link-label { font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); display: block; }
+.c-link-val { font-size: 0.82rem; color: var(--text); }
+
+.lang-block { margin-top: 1.5rem; }
+.lang-title {
+  font-size: 0.67rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text3);
+  margin-bottom: 0.6rem;
+}
+.lang-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.lang-pill {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--bg4);
+  border: 1px solid var(--line2);
+  color: var(--text2);
+}
+.lang-pill.fluent { color: var(--accent); border-color: rgba(232,184,109,0.25); background: var(--accent-dim); }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.72rem;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--line);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  
+  .stats-strip { grid-template-columns: 1fr 1fr; }
+  .stat-block { border-bottom: 1px solid var(--line2); }
+  .stat-block:nth-child(2n) { border-right: none; }
+  
+  .narrative-grid { grid-template-columns: 1fr; }
+  
+  .case-card { grid-template-columns: 1fr; }
+  .case-arrow { display: none; }
+  .pm-frames { grid-template-columns: 1fr 1fr; }
+  
+  .skills-layout { grid-template-columns: 1fr; }
+  
+  .contact-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.75rem; }
+}
+
+@media (max-width: 480px) {
+  #hero { padding-top: calc(58px + 3rem); padding-bottom: 3rem; }
+  section { padding: 3rem 0; }
+  
+  .stats-strip { grid-template-columns: 1fr 1fr; }
+  .stat-block { padding: 1.1rem; }
+  .stat-n { font-size: 1.6rem; }
+  
+  .pm-frames { grid-template-columns: 1fr; }
+  
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+}
+
+/* ===== TOP PROGRESS BAR ===== */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  z-index: 300;
+  transition: width 0.1s linear;
+  width: 0%;
+}
+</style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-wrap">
-      <a href="#home" class="brand">
-        <span class="brand-badge">MK</span>
-        <span>Maruti Khapare</span>
-      </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Strengths</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Case Studies</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Maruti<span>.</span></div>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact" class="nav-cta">Let's Talk →</a>
+  </div>
+  <button class="hamburger" id="hambtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#work" onclick="closeMobile()">Work</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#credentials" onclick="closeMobile()">Credentials</a>
+  <a href="#contact" onclick="closeMobile()">Let's Talk →</a>
+</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-badge">Open to Growth PM &amp; APM Roles · India &amp; International</div>
+    <h1 class="hero-title">
+      <span class="block">Growth Product</span>
+      <span class="block"><em>Manager</em> who</span>
+      <span class="block">ships results.</span>
+    </h1>
+    <p class="hero-sub">Engineering graduate turned B2B marketer — now building a PM career. I bring 4+ years of funnel ownership, user analytics, UX design, and cross-functional execution to products that need to grow.</p>
+    <div class="hero-meta">
+      <span class="meta-pill">📍 Karnataka, India</span>
+      <span class="meta-pill">✉ makhapare@gmail.com</span>
+      <span class="meta-pill">📞 +91 8296016230</span>
+      <span class="meta-pill">🌐 India · Dubai · US markets</span>
     </div>
-  </header>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="https://www.linkedin.com/in/maruti-khapare/" target="_blank">LinkedIn Profile →</a>
+      <a class="btn btn-ghost" href="https://www.behance.net/NovaNest" target="_blank">Behance Portfolio ↗</a>
+    </div>
+    <div class="stats-strip">
+      <div class="stat-block">
+        <div class="stat-n">4+</div>
+        <div class="stat-l">Years of<br>Experience</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Industries:<br>Tech, SaaS, Retail</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Markets:<br>India · Dubai · US</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">–10%</div>
+        <div class="stat-l">CPC Reduction<br>through A/B testing</div>
+      </div>
+    </div>
+  </section>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
+  <!-- WHY PM -->
+  <section id="why-pm" class="reveal">
+    <div class="sec-eyebrow">The Pivot</div>
+    <h2 class="sec-title">Marketing is Product<br><em>in disguise.</em></h2>
+    <p class="sec-desc">Every campaign I ran was a mini product cycle — discovery, hypothesis, ship, measure, iterate. Here's why my background translates directly to PM work.</p>
+    <div class="narrative-grid">
+      <div class="narr-cell reveal reveal-d1">
+        <div class="narr-icon">🧭</div>
+        <div class="narr-label">Roadmapping</div>
+        <div class="narr-head">Campaign planning = quarterly roadmaps</div>
+        <div class="narr-body">Across every role I've built and prioritised multi-channel roadmaps against business goals, balancing short-term wins with long-term organic growth — exactly the PM skill of managing a backlog under constraints.</div>
+      </div>
+      <div class="narr-cell reveal reveal-d2">
+        <div class="narr-icon">🔬</div>
+        <div class="narr-label">Experimentation</div>
+        <div class="narr-head">A/B tests on ads, copy and UX</div>
+        <div class="narr-body">I consistently ran controlled experiments — creative variants, landing page layouts, bid strategies — tracked them in GA4 and Search Console, and made data-backed decisions. That's the core PM loop.</div>
+      </div>
+      <div class="narr-cell reveal reveal-d3">
+        <div class="narr-icon">👤</div>
+        <div class="narr-label">User Research</div>
+        <div class="narr-head">Audience segmentation as user personas</div>
+        <div class="narr-body">Separating NRI vs. local buyers in jewellery, B2B decision-makers in Dubai, SMB owners in Tier-2 India — I built segment-level messaging that required real empathy for user needs and friction points.</div>
+      </div>
+      <div class="narr-cell reveal reveal-d4">
+        <div class="narr-icon">⚙️</div>
+        <div class="narr-label">Cross-functional</div>
+        <div class="narr-head">Leading without authority</div>
+        <div class="narr-body">I aligned design, dev, sales, and creative teams across geographies. I wrote briefs, owned timelines, and shipped client-facing assets end-to-end — the daily reality of a PM without direct reports.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / CASE STUDIES -->
+  <section id="work">
+    <div class="sec-eyebrow">Case Studies</div>
+    <h2 class="sec-title">Work reframed as<br><em>product impact.</em></h2>
+    <p class="sec-desc">Four projects where I owned the full cycle — problem definition, strategy, execution, and measurement.</p>
+
+    <div class="case-grid reveal">
+
+      <!-- Card 1 -->
+      <div class="case-card">
         <div>
-          <div class="eyebrow"><span class="dot"></span> Growth Manager at Megamind Studios</div>
-          <h1><span class="gradient">Growth systems.</span><br/>Sharp strategy. Measurable outcomes.</h1>
-          <p class="lead">
-            I’m Maruti Khapare, a Growth Manager with hands-on experience across SEO, content strategy,
-            funnels, automation, UI/UX, and performance-led execution. I build structured growth engines
-            that connect customer needs with business results.
-          </p>
-          <div class="hero-cta">
-            <a class="btn primary" href="#projects">View Case Studies</a>
-            <a class="btn secondary" href="#contact">Get In Touch</a>
+          <div class="case-tags">
+            <span class="tag tag-accent">SEO Strategy</span>
+            <span class="tag tag-green">B2B SaaS</span>
+            <span class="tag">Organic Growth</span>
+            <span class="tag">Content Roadmap</span>
+          </div>
+          <div class="case-title">Rebuilding organic acquisition for B2B clients at Techno mind IT Solutions</div>
+          <div class="case-company">Techno mind IT Solutions · Aug 2025 – Present</div>
+          <div class="case-desc">Inherited a fragmented SEO presence for multiple B2B clients. Diagnosed technical debt, rebuilt keyword strategy from intent-mapping, introduced a content calendar tied to funnel stages, and established a monthly reporting cadence against lead-quality KPIs — not just rankings.</div>
+          <div class="pm-frames">
+            <div class="pm-frame">
+              <div class="pm-frame-label">Problem</div>
+              <div class="pm-frame-val">Low-quality organic traffic not converting to qualified B2B leads</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Solution</div>
+              <div class="pm-frame-val">Intent-mapped content roadmap + technical foundation audit</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Metric</div>
+              <div class="pm-frame-val">Lead quality score & MQL-to-SQL conversion rate</div>
+            </div>
+          </div>
+          <div class="outcomes">
+            <div><div class="out-v">↑ MQLs</div><div class="out-l">Qualified lead volume</div></div>
+            <div><div class="out-v">↑ Brand Authority</div><div class="out-l">Domain-level trust signals</div></div>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Quick highlights">
-          <p class="section-title" style="margin-bottom:12px">Quick Snapshot</p>
-          <div class="stat-grid">
-            <div class="stat">
-              <h3>4+</h3>
-              <p>Years across growth, SEO, websites, and digital execution</p>
-            </div>
-            <div class="stat">
-              <h3>B2B + D2C</h3>
-              <p>Worked across agencies, local brands, and remote client setups</p>
-            </div>
-            <div class="stat">
-              <h3>SEO + PPC</h3>
-              <p>Experience in acquisition, content, analytics, and optimization</p>
-            </div>
-            <div class="stat">
-              <h3>Product-minded</h3>
-              <p>Focused on systems, user journeys, and scalable decision-making</p>
-            </div>
-          </div>
-        </aside>
+        <div class="case-arrow">→</div>
       </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <p class="section-title">About</p>
-        <h2 class="section-head">A single-page portfolio with a clean, recruiter-friendly structure.</h2>
-        <p class="section-copy">
-          This layout is intentionally direct. It mirrors the high-impact single-page format you shared:
-          strong hero, concise bio, capability blocks, experience timeline, featured work, and a clear contact section.
-        </p>
-        <div class="about-grid">
-          <div class="card">
-            <h3>Who I am</h3>
-            <p class="muted">
-              I work at the intersection of strategy and execution. My background spans SEO, growth
-              marketing, web development, content, CRM thinking, and conversion optimization. I care about
-              clarity, clean systems, and decisions that move the business forward.
-            </p>
+      <!-- Card 2 -->
+      <div class="case-card">
+        <div>
+          <div class="case-tags">
+            <span class="tag tag-blue">Paid Acquisition</span>
+            <span class="tag tag-green">–10% CPC</span>
+            <span class="tag">Dubai Market</span>
+            <span class="tag">UX Optimisation</span>
           </div>
-          <div class="card" id="skills">
-            <h3>What I bring</h3>
-            <div class="list">
-              <span>Growth strategy and funnel thinking</span>
-              <span>SEO audits, keyword strategy, and on-page execution</span>
-              <span>Landing page optimization and UI/UX collaboration</span>
-              <span>Performance tracking with analytics and reporting</span>
-              <span>Cross-functional thinking with product potential</span>
+          <div class="case-title">Reducing CPC by 10% while increasing qualified pipeline for Deluxe Printing, Dubai</div>
+          <div class="case-company">Deluxe Printing, Dubai · Jan 2025 – Aug 2025</div>
+          <div class="case-desc">Took ownership of an underperforming Google and LinkedIn Ads setup for a B2B print company targeting Dubai SMBs. Re-structured campaign architecture, introduced negative keyword management, redesigned landing pages for message-match, and shipped a weekly performance review with the sales team to close the lead-quality feedback loop.</div>
+          <div class="pm-frames">
+            <div class="pm-frame">
+              <div class="pm-frame-label">Problem</div>
+              <div class="pm-frame-val">High CPCs, mismatched landing pages, poor sales-marketing alignment</div>
             </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Solution</div>
+              <div class="pm-frame-val">Campaign restructure + landing page A/B test + sales feedback loop</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Metric</div>
+              <div class="pm-frame-val">CPC, conversion rate, qualified pipeline value</div>
+            </div>
+          </div>
+          <div class="outcomes">
+            <div><div class="out-v">–10% CPC</div><div class="out-l">Cost per click reduction</div></div>
+            <div><div class="out-v">↑ Qualified leads</div><div class="out-l">Lead quality score</div></div>
+          </div>
+        </div>
+        <div class="case-arrow">→</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="case-card">
+        <div>
+          <div class="case-tags">
+            <span class="tag tag-accent">CRM Automation</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">Audience Segmentation</span>
+            <span class="tag">Influencer</span>
+          </div>
+          <div class="case-title">Building a retention engine for NRI and local segments at Shri Mahaganapati Jewelers</div>
+          <div class="case-company">Shri Mahaganapati Jewelers · Aug 2024 – Jan 2025</div>
+          <div class="case-desc">Designed and launched an integrated festive campaign system — combining Meta Ads, Google Search, influencer partnerships, and a CRM workflow that triggered personalised email sequences based on past purchase behaviour. Separate content and offer tracks for NRI buyers and local walk-in segments dramatically improved relevancy.</div>
+          <div class="pm-frames">
+            <div class="pm-frame">
+              <div class="pm-frame-label">Problem</div>
+              <div class="pm-frame-val">One-size-fits-all messaging failing two distinct customer segments</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Solution</div>
+              <div class="pm-frame-val">Segment-level CRM automation + targeted remarketing funnels</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Metric</div>
+              <div class="pm-frame-val">Online enquiries, email open rates, repeat purchase rate</div>
+            </div>
+          </div>
+          <div class="outcomes">
+            <div><div class="out-v">↑ Online enquiries</div><div class="out-l">via remarketing funnels</div></div>
+            <div><div class="out-v">⭐ Star Manager</div><div class="out-l">Top performer award 2022</div></div>
+          </div>
+        </div>
+        <div class="case-arrow">→</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="case-card">
+        <div>
+          <div class="case-tags">
+            <span class="tag tag-blue">Freelance PM</span>
+            <span class="tag">Web Development</span>
+            <span class="tag">Education · Real Estate</span>
+            <span class="tag">Full Ownership</span>
+          </div>
+          <div class="case-title">End-to-end digital product ownership across education, real estate &amp; public sector</div>
+          <div class="case-company">Self-Employed · Aug 2022 – Present</div>
+          <div class="case-desc">Operating as a solo product owner — I scoped requirements, designed information architecture, built UX-optimised websites in HTML/CSS, ran SEO and PPC campaigns, and reported on outcomes. Across industries with no playbook, this required discovering user needs from scratch and iterating fast. The closest analogy to 0-to-1 product work.</div>
+          <div class="pm-frames">
+            <div class="pm-frame">
+              <div class="pm-frame-label">Role</div>
+              <div class="pm-frame-val">Product owner, designer, developer, and marketer — all in one</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Process</div>
+              <div class="pm-frame-val">Discovery → design → build → launch → measure → iterate</div>
+            </div>
+            <div class="pm-frame">
+              <div class="pm-frame-label">Stack</div>
+              <div class="pm-frame-val">Figma, HTML/CSS, GA4, Google Ads, Zoho CRM</div>
+            </div>
+          </div>
+          <div class="outcomes">
+            <div><div class="out-v">Multiple clients</div><div class="out-l">Retained across industries</div></div>
+            <div><div class="out-v">0→1 launches</div><div class="out-l">Built from brief to live</div></div>
+          </div>
+        </div>
+        <div class="case-arrow">→</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="sec-eyebrow">PM Toolkit</div>
+    <h2 class="sec-title">Skills that map to<br><em>every PM pillar.</em></h2>
+    <p class="sec-desc">Product management sits at the intersection of business, technology, and design. I've built hard skills across all three.</p>
+    <div class="skills-layout reveal">
+      <div class="skill-group">
+        <div class="sg-head">
+          <span class="sg-icon">📊</span>
+          <span class="sg-title">Analytics & Data</span>
+        </div>
+        <div class="sg-items">
+          <div class="sg-item">Google Analytics 4 (GA4)</div>
+          <div class="sg-item">Google Search Console</div>
+          <div class="sg-item">Zoho CRM</div>
+          <div class="sg-item">Funnel analysis & attribution</div>
+          <div class="sg-item">A/B testing & experimentation</div>
+          <div class="sg-item">Conversion rate optimisation</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head">
+          <span class="sg-icon">🚀</span>
+          <span class="sg-title">Growth & Acquisition</span>
+        </div>
+        <div class="sg-items">
+          <div class="sg-item">Google Ads & PPC management</div>
+          <div class="sg-item">LinkedIn Ads (B2B)</div>
+          <div class="sg-item">Meta Ads (Facebook/Instagram)</div>
+          <div class="sg-item">SEO strategy & technical SEO</div>
+          <div class="sg-item">Email & CRM automation</div>
+          <div class="sg-item">Marketing funnel design</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head">
+          <span class="sg-icon">🎨</span>
+          <span class="sg-title">Product & UX Design</span>
+        </div>
+        <div class="sg-items">
+          <div class="sg-item">Figma (wireframing & prototypes)</div>
+          <div class="sg-item">Landing page design & testing</div>
+          <div class="sg-item">HTML / CSS development</div>
+          <div class="sg-item">UX audit & optimisation</div>
+          <div class="sg-item">Information architecture</div>
+          <div class="sg-item">User journey mapping</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head">
+          <span class="sg-icon">🤖</span>
+          <span class="sg-title">AI & Emerging Tech</span>
+        </div>
+        <div class="sg-items">
+          <div class="sg-item">AI-driven content personalisation</div>
+          <div class="sg-item">Microsoft Azure AI-900 certified</div>
+          <div class="sg-item">AI Search Essentials (Semrush)</div>
+          <div class="sg-item">Prompt engineering & AI tools</div>
+          <div class="sg-item">Automation & workflow design</div>
+          <div class="sg-item">Personalisation at scale</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head">
+          <span class="sg-icon">🤝</span>
+          <span class="sg-title">Strategy & Collaboration</span>
+        </div>
+        <div class="sg-items">
+          <div class="sg-item">B2B & SaaS go-to-market strategy</div>
+          <div class="sg-item">Cross-functional team alignment</div>
+          <div class="sg-item">Stakeholder communication</div>
+          <div class="sg-item">Project brief writing</div>
+          <div class="sg-item">Multi-geography campaigns</div>
+          <div class="sg-item">Influencer & partner management</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head">
+          <span class="sg-icon">🌐</span>
+          <span class="sg-title">Domain Knowledge</span>
+        </div>
+        <div class="sg-items">
+          <div class="sg-item">SaaS product marketing</div>
+          <div class="sg-item">B2B demand generation</div>
+          <div class="sg-item">E-commerce & retail</div>
+          <div class="sg-item">Education & real estate verticals</div>
+          <div class="sg-item">Global markets: India, Dubai, US</div>
+          <div class="sg-item">Graphic design (ITC Limited cert.)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-eyebrow">Experience</div>
+    <h2 class="sec-title">4+ years of<br><em>building & growing.</em></h2>
+    <p class="sec-desc">Full timeline of roles — each one adding a new dimension of product thinking.</p>
+    <div class="timeline reveal">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Aug 2025 – Present</div>
+        <div class="tl-role">SEO Manager – B2B</div>
+        <div class="tl-company">Techno mind IT Solutions</div>
+        <div class="tl-points">
+          <div class="tl-point">Own full SEO strategy for multiple B2B clients — keyword architecture, content roadmaps, on-page optimisation, and link acquisition.</div>
+          <div class="tl-point">Build performance dashboards tied to qualified lead generation, not vanity metrics.</div>
+          <div class="tl-point">Introduce AI-assisted content workflows to scale production without sacrificing quality.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Jan 2025 – Aug 2025</div>
+        <div class="tl-role">Growth Marketing Manager – B2B</div>
+        <div class="tl-company">Deluxe Printing, Dubai</div>
+        <div class="tl-points">
+          <div class="tl-point">Led B2B lead generation strategy through Google Ads, LinkedIn Ads, and SEO — managing budget allocation and experiment prioritisation.</div>
+          <div class="tl-point">Reduced CPC by 10% through systematic campaign restructuring and A/B testing of ad creative and landing pages.</div>
+          <div class="tl-point">Collaborated directly with creative and development teams to ship UX improvements and high-impact marketing assets.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Aug 2024 – Jan 2025</div>
+        <div class="tl-role">Marketing Manager – Retail & E-commerce</div>
+        <div class="tl-company">Shri Mahaganapati Jewelers</div>
+        <div class="tl-points">
+          <div class="tl-point">Designed and launched integrated festive campaigns across Meta Ads, Google Search, and influencer channels.</div>
+          <div class="tl-point">Built CRM workflows and email automation for NRI and local customer segments — personalisation at the audience level.</div>
+          <div class="tl-point">Created targeted landing pages and remarketing funnels that drove measurable increase in online enquiries. Awarded Star Performing Manager.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Aug 2022 – Present</div>
+        <div class="tl-role">Freelance Digital Marketing & Web Developer</div>
+        <div class="tl-company">Self-Employed</div>
+        <div class="tl-points">
+          <div class="tl-point">Full product ownership for clients in education, real estate, and public sector — scoping, designing, building, and optimising digital properties independently.</div>
+          <div class="tl-point">Delivered SEO, PPC, UX-optimised websites, and social campaigns with no support structure — shipping to production under client deadlines.</div>
+          <div class="tl-point">Collaborated with influencers and brand managers, managing external stakeholders and creative direction.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="sec-eyebrow">Credentials</div>
+    <h2 class="sec-title">Education &<br><em>Certifications.</em></h2>
+
+    <div class="tl-item reveal" style="padding-left:0; margin-bottom: 2rem;">
+      <div style="font-size:0.7rem;color:var(--text3);margin-bottom:3px;font-weight:500;">2022 · VTU</div>
+      <div class="tl-role">BE – Electronics &amp; Communication Engineering</div>
+      <div class="tl-company">MMEC, Belagavi · CGPA 7.3</div>
+      <div class="tl-point" style="margin-top:0.4rem;">Engineering foundation providing technical literacy essential for working with dev teams, reading technical specs, and understanding product architecture.</div>
+    </div>
+
+    <div class="cert-grid reveal">
+      <div class="cert-card"><span class="cert-icon">☁️</span>Microsoft Azure AI-900 – AI Fundamentals</div>
+      <div class="cert-card"><span class="cert-icon">📈</span>Digital Marketing – IIM Bangalore</div>
+      <div class="cert-card"><span class="cert-icon">🔍</span>Technical SEO & AI Search – Semrush</div>
+      <div class="cert-card"><span class="cert-icon">🖥️</span>UX Design</div>
+      <div class="cert-card"><span class="cert-icon">📢</span>Advertising &amp; Sales – Manipal University</div>
+      <div class="cert-card"><span class="cert-icon">🏷️</span>Personal Branding – Jain University</div>
+      <div class="cert-card"><span class="cert-icon">🎨</span>Graphic Design – ITC Limited</div>
+      <div class="cert-card"><span class="cert-icon">🌐</span>Leadership Programs</div>
+    </div>
+
+    <div class="award-strip reveal">
+      <div class="award-pill">🏆 President's Award &amp; Governor's Award – BS&amp;G</div>
+      <div class="award-pill">⭐ Star Performing Manager – MG Jewelers 2022</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-card reveal">
+      <div>
+        <div class="sec-eyebrow">Let's Connect</div>
+        <div class="contact-title">Ready to build<br><em>products together?</em></div>
+        <p class="contact-note">Open to Growth PM, APM, and Product Marketing Manager roles in India and internationally. Bring a problem worth solving and I'll bring the user empathy, data chops, and execution muscle.</p>
+        <a class="btn btn-gold" href="https://www.linkedin.com/in/maruti-khapare/" target="_blank" style="display:inline-flex;">Message on LinkedIn →</a>
+        <div class="lang-block" style="margin-top:1.75rem;">
+          <div class="lang-title">Languages</div>
+          <div class="lang-list">
+            <span class="lang-pill fluent">English</span>
+            <span class="lang-pill fluent">Hindi</span>
+            <span class="lang-pill fluent">Marathi</span>
+            <span class="lang-pill">Kannada</span>
+            <span class="lang-pill">Telugu</span>
           </div>
         </div>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <p class="section-title">Core Strengths</p>
-        <h2 class="section-head">Built for growth, positioning, and structured execution.</h2>
-        <p class="section-copy">
-          These are the areas I’ve worked on directly, from acquisition and organic visibility to user
-          journeys and website improvements.
-        </p>
-        <div class="about-grid">
-          <div class="card">
-            <h3>Strategy & Growth</h3>
-            <div class="pill-row">
-              <span class="pill">Growth Planning</span>
-              <span class="pill">Positioning</span>
-              <span class="pill">Funnel Thinking</span>
-              <span class="pill">Lead Generation</span>
-              <span class="pill">CRM Workflows</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Execution & Tools</h3>
-            <div class="pill-row">
-              <span class="pill">SEO</span>
-              <span class="pill">GA4</span>
-              <span class="pill">Meta Ads</span>
-              <span class="pill">WordPress</span>
-              <span class="pill">SEMrush</span>
-              <span class="pill">Ahrefs</span>
-              <span class="pill">Figma</span>
-              <span class="pill">Automation</span>
-            </div>
-          </div>
+      <div class="contact-links">
+        <a class="c-link" href="mailto:makhapare@gmail.com">
+          <span class="c-link-icon">✉</span>
+          <div><span class="c-link-label">Email</span><span class="c-link-val">makhapare@gmail.com</span></div>
+        </a>
+        <a class="c-link" href="tel:+918296016230">
+          <span class="c-link-icon">📞</span>
+          <div><span class="c-link-label">Phone</span><span class="c-link-val">+91 8296016230</span></div>
+        </a>
+        <a class="c-link" href="https://www.linkedin.com/in/maruti-khapare/" target="_blank">
+          <span class="c-link-icon">💼</span>
+          <div><span class="c-link-label">LinkedIn</span><span class="c-link-val">linkedin.com/in/maruti-khapare</span></div>
+        </a>
+        <a class="c-link" href="https://www.behance.net/NovaNest" target="_blank">
+          <span class="c-link-icon">🖼</span>
+          <div><span class="c-link-label">Portfolio</span><span class="c-link-val">behance.net/NovaNest</span></div>
+        </a>
+        <div class="c-link" style="cursor:default;">
+          <span class="c-link-icon">📍</span>
+          <div><span class="c-link-label">Location</span><span class="c-link-val">Karnataka, India · Open to relocation</span></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="experience">
-      <div class="container">
-        <p class="section-title">Experience</p>
-        <h2 class="section-head">Recent work and role progression.</h2>
-        <p class="section-copy">
-          Your actual dates and positions are already reflected here. Replace or tighten any description later if needed.
-        </p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div><small>Feb 2026 – Present</small></div>
-            <div>
-              <div class="role">Growth Manager</div>
-              <div class="org">Megamind Studios</div>
-              <div class="muted">Leading growth-focused initiatives across strategy, SEO, acquisition, website thinking, and scalable marketing systems.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div><small>Aug 2025 – Feb 2026</small></div>
-            <div>
-              <div class="role">SEO Manager</div>
-              <div class="org">Techno Mind IT Solutions</div>
-              <div class="muted">Handled SEO strategy, technical audits, keyword planning, content optimization, reporting, and off-page execution for B2B-focused work.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div><small>Jan 2025 – Aug 2025</small></div>
-            <div>
-              <div class="role">Growth Marketing Manager</div>
-              <div class="org">Deluxe Printing, Dubai (Remote)</div>
-              <div class="muted">Worked on growth channels, brand visibility, and demand generation while aligning marketing execution with business goals.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div><small>Aug 2024 – Jan 2025</small></div>
-            <div>
-              <div class="role">Marketing Manager</div>
-              <div class="org">Shri Mahaganapati Jewellers</div>
-              <div class="muted">Managed local marketing, digital presence, and audience engagement for a retail brand environment.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div><small>Aug 2022 – Present</small></div>
-            <div>
-              <div class="role">Freelance Digital Marketing & Web Developer</div>
-              <div class="org">Independent</div>
-              <div class="muted">Supported businesses with website builds, SEO improvements, branding, and digital campaign execution.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</div><!-- end .wrap -->
 
-    <section id="projects">
-      <div class="container">
-        <p class="section-title">Featured Work</p>
-        <h2 class="section-head">Case-study style blocks instead of a generic project gallery.</h2>
-        <p class="section-copy">
-          These are written to match your profile. Replace the metrics with exact numbers once you’re ready.
-        </p>
-        <div class="project-grid">
-          <article class="card project-card">
-            <div class="num">01</div>
-            <h3>SEO Growth System</h3>
-            <p>Built a structured SEO workflow covering audits, keyword mapping, on-page fixes, content alignment, and tracking for better organic performance.</p>
-            <div class="pill-row">
-              <span class="pill">SEO Strategy</span>
-              <span class="pill">Audits</span>
-              <span class="pill">Content SEO</span>
-            </div>
-          </article>
-          <article class="card project-card">
-            <div class="num">02</div>
-            <h3>Landing Page Optimization</h3>
-            <p>Improved website clarity, user flow, and conversion opportunities by aligning messaging, visual hierarchy, and CTA placement.</p>
-            <div class="pill-row">
-              <span class="pill">CRO</span>
-              <span class="pill">UI/UX</span>
-              <span class="pill">Funnel Design</span>
-            </div>
-          </article>
-          <article class="card project-card">
-            <div class="num">03</div>
-            <h3>Growth Operations</h3>
-            <p>Connected marketing efforts with reporting, repeatable execution, and system thinking to reduce chaos and improve team-level output.</p>
-            <div class="pill-row">
-              <span class="pill">Automation</span>
-              <span class="pill">Reporting</span>
-              <span class="pill">Scalable Systems</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<footer>
+  © 2025 Maruti Khapare · Growth Product Manager · Karnataka, India
+</footer>
 
-    <section id="contact">
-      <div class="container">
-        <p class="section-title">Contact</p>
-        <h2 class="section-head">Let’s build something useful.</h2>
-        <p class="section-copy">
-          Add your real email, LinkedIn, resume link, and portfolio links here. Right now this section is structured and ready for you to edit.
-        </p>
-        <div class="contact-grid">
-          <div class="card contact-card">
-            <div class="item">
-              <strong>Email</strong>
-              <div class="muted">yourname@email.com</div>
-            </div>
-            <div class="item">
-              <strong>LinkedIn</strong>
-              <div class="muted">linkedin.com/in/yourprofile</div>
-            </div>
-            <div class="item">
-              <strong>Location</strong>
-              <div class="muted">India</div>
-            </div>
-          </div>
-          <div class="card">
-            <h3>What to update next</h3>
-            <div class="list">
-              <span>Add your real contact details</span>
-              <span>Replace placeholder case-study text with real wins</span>
-              <span>Insert your resume or Notion portfolio link</span>
-              <span>Swap title if you want product-focused positioning</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<script>
+// Progress bar
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  bar.style.width = pct + '%';
+});
 
-  <footer class="footer">
-    <div class="container">© 2026 Maruti Khapare. Built as a clean single-page portfolio for Vercel deployment.</div>
-  </footer>
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(el => obs.observe(el));
+
+// Mobile menu
+const btn = document.getElementById('hambtn');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => menu.classList.toggle('open'));
+function closeMobile() { menu.classList.remove('open'); }
+
+// Nav shadow on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.boxShadow = window.scrollY > 10 ? '0 2px 24px rgba(0,0,0,0.5)' : 'none';
+});
+</script>
 </body>
 </html>
