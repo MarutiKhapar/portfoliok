@@ -1410,7 +1410,7 @@
       });
     });
   </script>
-  <!-- Portfolio Chatbot Widget Start -->
+<!-- Portfolio Chatbot Widget Start -->
 <div id="maruti-chatbot">
   <button id="chatbotToggle" aria-label="Open chatbot">Chat</button>
 
@@ -1628,13 +1628,21 @@
         "Content strategy, FAQ planning, and local search optimization for hotel websites",
         "SEO process improvement and tool planning for better keyword, backlink, and content workflows"
       ],
-      education: "Add your education details here.",
-      contact: "Add your email, phone, contact form link, or LinkedIn here.",
-      location: "Add your location here if you want it shown.",
-      resumeLink: "Add your resume link here."
+      education: "Education details can be shared on request or via LinkedIn profile.",
+      contact: "You can reach Maruti via email at makhapare@gmail.com or call/WhatsApp at +91 8296016230. Connect on LinkedIn: https://www.linkedin.com/in/maruti-khapare/",
+      location: "India",
+      resumeLink: "https://drive.google.com/file/d/1-3m3FNHJalQqXPFbeRWSXCIZQF0m2osX/view?usp=sharing",
+      social: {
+        linkedin: "https://www.linkedin.com/in/maruti-khapare/",
+        instagram: "https://www.instagram.com/chilled_duke/",
+        behance: "https://www.behance.net/NovaNest"
+      }
     };
 
-    const fallbackReply = "I only answer questions about Maruti Khapare, including his work, skills, projects, experience, and contact details.";
+    const webhookUrl = ""; // Add your backend/webhook URL here if you want server-side saving
+    const localStorageKey = "maruti_portfolio_leads";
+
+    const fallbackReply = "I only answer questions about Maruti Khapare, including his work, skills, projects, experience, and contact details. If you want to work with Maruti, type 'hire Maruti' or 'contact Maruti'.";
 
     const toggleBtn = document.getElementById("chatbotToggle");
     const closeBtn = document.getElementById("chatbotClose");
@@ -1643,6 +1651,24 @@
     const chatForm = document.getElementById("chatForm");
     const chatInput = document.getElementById("chatInput");
     const chips = document.querySelectorAll("#maruti-chatbot .chip");
+
+    let leadMode = false;
+    let leadStep = 0;
+    const leadData = {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: ""
+    };
+
+    const leadQuestions = [
+      "Great. Let’s capture your details. What’s your full name?",
+      "What’s your email address?",
+      "What’s your phone number or WhatsApp number?",
+      "What company or brand are you from?",
+      "What do you need help with?"
+    ];
 
     function addMessage(text, sender) {
       const el = document.createElement("div");
@@ -1659,18 +1685,44 @@
     function isAboutMaruti(question) {
       const q = normalize(question);
       const allowedKeywords = [
-        "maruti", "you", "your", "experience", "skills", "project", "work", "career", "resume", "contact", "linkedin", "education", "background", "portfolio", "location", "role"
+        "maruti", "you", "your", "experience", "skills", "project", "work", "career", "resume", "contact", "linkedin", "education", "background", "portfolio", "location", "role", "hire", "freelance", "service", "services"
       ];
       return allowedKeywords.some(keyword => q.includes(keyword));
+    }
+
+    function wantsLeadCapture(question) {
+      const q = normalize(question);
+      const leadKeywords = [
+        "hire maruti",
+        "contact maruti",
+        "work with maruti",
+        "book a call",
+        "let's work",
+        "i need seo help",
+        "i need marketing help",
+        "freelance",
+        "consultation",
+        "services",
+        "can you help me",
+        "project inquiry"
+      ];
+      return leadKeywords.some(keyword => q.includes(keyword));
     }
 
     function getResponse(question) {
       const q = normalize(question);
 
+      if (wantsLeadCapture(q)) {
+        startLeadCapture();
+        return null;
+      }
+
       if (!isAboutMaruti(q)) return fallbackReply;
 
       if (q.includes("about") || q.includes("who is") || q.includes("tell me about")) {
-        return `${portfolioData.intro}\n\nCurrent role: ${portfolioData.role}`;
+        return `${portfolioData.intro}
+
+Current role: ${portfolioData.role}`;
       }
       if (q.includes("role") || q.includes("what does") || q.includes("current job") || q.includes("current role")) {
         return portfolioData.role;
@@ -1679,16 +1731,22 @@
         return `Maruti’s key skills include: ${portfolioData.skills.join(", ")}.`;
       }
       if (q.includes("experience") || q.includes("career") || q.includes("worked") || q.includes("job")) {
-        return `Maruti’s experience includes:\n- ${portfolioData.experience.join("\n- ")}`;
+        return `Maruti’s experience includes:
+- ${portfolioData.experience.join("
+- ")}`;
       }
       if (q.includes("project") || q.includes("case study") || q.includes("portfolio work")) {
-        return `Some of Maruti’s projects include:\n- ${portfolioData.projects.join("\n- ")}`;
+        return `Some of Maruti’s projects include:
+- ${portfolioData.projects.join("
+- ")}`;
       }
       if (q.includes("education") || q.includes("study") || q.includes("qualification")) {
         return portfolioData.education;
       }
-      if (q.includes("contact") || q.includes("reach") || q.includes("email") || q.includes("linkedin")) {
-        return portfolioData.contact;
+      if (q.includes("contact") || q.includes("reach") || q.includes("email") || q.includes("linkedin") || q.includes("instagram") || q.includes("behance")) {
+        return `${portfolioData.contact}
+Instagram: ${portfolioData.social.instagram}
+Behance: ${portfolioData.social.behance}`;
       }
       if (q.includes("resume") || q.includes("cv")) {
         return portfolioData.resumeLink;
@@ -1696,15 +1754,145 @@
       if (q.includes("location") || q.includes("based")) {
         return portfolioData.location;
       }
+      if (q.includes("service") || q.includes("services") || q.includes("freelance")) {
+        return "Maruti works across SEO, growth marketing, content strategy, website optimization, and digital marketing execution. If you want to discuss a project, type 'hire Maruti'.";
+      }
 
-      return `${portfolioData.intro}\n\nAsk about skills, experience, projects, or contact details.`;
+      return `${portfolioData.intro}
+
+Ask about skills, experience, projects, services, or contact details.`;
     }
 
-    function handleQuestion(question) {
+    function startLeadCapture() {
+      leadMode = true;
+      leadStep = 0;
+      leadData.name = "";
+      leadData.email = "";
+      leadData.phone = "";
+      leadData.company = "";
+      leadData.message = "";
+      addMessage("I can help with that.", "bot");
+      setTimeout(() => addMessage(leadQuestions[leadStep], "bot"), 150);
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+      return /^[+\d][\d\s-]{7,}$/.test(phone);
+    }
+
+    function saveLeadLocally(payload) {
+      try {
+        const existing = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
+        existing.push(payload);
+        localStorage.setItem(localStorageKey, JSON.stringify(existing));
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    async function saveLeadToWebhook(payload) {
+      if (!webhookUrl) return { skipped: true };
+      try {
+        const response = await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        return { ok: response.ok };
+      } catch (error) {
+        return { ok: false };
+      }
+    }
+
+    async function finishLeadCapture() {
+      const payload = {
+        ...leadData,
+        source: window.location.href,
+        createdAt: new Date().toISOString()
+      };
+
+      const localSaved = saveLeadLocally(payload);
+      const webhookSaved = await saveLeadToWebhook(payload);
+
+      leadMode = false;
+      leadStep = 0;
+
+      if (localSaved && webhookSaved.skipped) {
+        addMessage("Thanks. Your details have been saved on this device. Connect a webhook to save them to your backend or Google Sheet.", "bot");
+        return;
+      }
+
+      if (localSaved && webhookSaved.ok) {
+        addMessage("Thanks. Your details have been submitted successfully. Maruti can follow up with you soon.", "bot");
+        return;
+      }
+
+      if (localSaved && webhookSaved.ok === false) {
+        addMessage("Your details were saved on this device, but the server submission failed. Check your webhook URL.", "bot");
+        return;
+      }
+
+      addMessage("I could not save the lead properly. Please contact Maruti directly at makhapare@gmail.com or +91 8296016230.", "bot");
+    }
+
+    async function handleLeadStep(answer) {
+      const value = answer.trim();
+      if (!value) return addMessage("Please enter a valid response.", "bot");
+
+      if (leadStep === 0) {
+        leadData.name = value;
+        leadStep++;
+        return addMessage(leadQuestions[leadStep], "bot");
+      }
+
+      if (leadStep === 1) {
+        if (!isValidEmail(value)) {
+          return addMessage("Please enter a valid email address.", "bot");
+        }
+        leadData.email = value;
+        leadStep++;
+        return addMessage(leadQuestions[leadStep], "bot");
+      }
+
+      if (leadStep === 2) {
+        if (!isValidPhone(value)) {
+          return addMessage("Please enter a valid phone or WhatsApp number.", "bot");
+        }
+        leadData.phone = value;
+        leadStep++;
+        return addMessage(leadQuestions[leadStep], "bot");
+      }
+
+      if (leadStep === 3) {
+        leadData.company = value;
+        leadStep++;
+        return addMessage(leadQuestions[leadStep], "bot");
+      }
+
+      if (leadStep === 4) {
+        leadData.message = value;
+        return finishLeadCapture();
+      }
+    }
+
+    async function handleQuestion(question) {
       if (!question.trim()) return;
       addMessage(question, "user");
+
+      if (leadMode) {
+        return handleLeadStep(question);
+      }
+
       const response = getResponse(question);
-      setTimeout(() => addMessage(response, "bot"), 200);
+      if (response) {
+        setTimeout(() => addMessage(response, "bot"), 200);
+      }
     }
 
     toggleBtn.addEventListener("click", () => {
@@ -1728,7 +1916,7 @@
       });
     });
 
-    addMessage("Hi, I’m Maruti’s portfolio assistant. Ask me about Maruti’s background, skills, experience, projects, or contact details.", "bot");
+    addMessage("Hi, I’m Maruti’s portfolio assistant. Ask me about Maruti’s background, skills, experience, projects, services, or contact details. If you want to discuss work, type 'hire Maruti'.", "bot");
   })();
 </script>
 <!-- Portfolio Chatbot Widget End -->
