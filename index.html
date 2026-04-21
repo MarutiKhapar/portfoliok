@@ -1660,7 +1660,7 @@
     function addMessage(text, sender) {
       const el = document.createElement("div");
       el.className = `msg ${sender}`;
-      el.textContent = text;
+      el.innerHTML = text;
       chatMessages.appendChild(el);
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
@@ -1690,21 +1690,21 @@
 Current role: ${portfolioData.role}
 
 Want full details? Check the resume:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("role") || q.includes("what does") || q.includes("current job") || q.includes("current role")) {
         return `${portfolioData.role}
 
 Want full details? Check the resume:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("skill") || q.includes("expertise") || q.includes("specialize")) {
         return `Maruti’s key skills include: ${portfolioData.skills.join(", ")}.
 
 Want full details? Check the resume:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("experience") || q.includes("career") || q.includes("worked") || q.includes("job")) {
@@ -1712,7 +1712,7 @@ ${portfolioData.resumeLink}`;
 - ${portfolioData.experience.join("\n- ")}
 
 Want full details? Check the resume:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("project") || q.includes("case study") || q.includes("portfolio work")) {
@@ -1720,14 +1720,14 @@ ${portfolioData.resumeLink}`;
 - ${portfolioData.projects.join("\n- ")}
 
 Want full details? Check the resume:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("education") || q.includes("study") || q.includes("qualification")) {
         return `${portfolioData.education}
 
 You can also check the resume here:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (
@@ -1745,26 +1745,26 @@ Instagram: ${portfolioData.social.instagram}
 Behance: ${portfolioData.social.behance}
 
 You can also view the resume here:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("resume") || q.includes("cv")) {
         return `You can view and download Maruti's resume here:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("location") || q.includes("based")) {
         return `${portfolioData.name} is based in ${portfolioData.location}.
 
 You can also view the resume here:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       if (q.includes("service") || q.includes("services")) {
         return `Maruti works across SEO, growth marketing, content strategy, website optimization, and digital marketing execution.
 
 For full details, check the resume:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
       return `${portfolioData.intro}
@@ -1772,7 +1772,7 @@ ${portfolioData.resumeLink}`;
 Ask about skills, experience, projects, contact details, or resume.
 
 You can also view the resume here:
-${portfolioData.resumeLink}`;
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
     }
 
     function handleQuestion(question) {
@@ -1807,7 +1807,7 @@ ${portfolioData.resumeLink}`;
       `Hi, I’m Maruti’s portfolio assistant. Ask me about Maruti’s background, skills, experience, projects, contact details, or resume.
 
 Resume:
-${portfolioData.resumeLink}`,
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`,
       "bot"
     );
   })();
