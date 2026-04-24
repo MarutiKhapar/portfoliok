@@ -1424,7 +1424,7 @@
     <div class="chat-header">
       <div>
         <h3>Ask about Maruti</h3>
-        <p>Only answers questions about Maruti</p>
+        <p>Answers about Maruti’s work, skills, projects, resume and contact</p>
       </div>
       <button id="chatbotClose" aria-label="Close chatbot">×</button>
     </div>
@@ -1546,6 +1546,11 @@
     color: white;
   }
 
+  .msg a {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+
   .chat-suggestions {
     display: flex;
     flex-wrap: wrap;
@@ -1561,6 +1566,10 @@
     padding: 7px 10px;
     font-size: 12px;
     cursor: pointer;
+  }
+
+  .chip:hover {
+    background: #374151;
   }
 
   .chat-form {
@@ -1621,7 +1630,10 @@
         "Link building",
         "Website optimization",
         "Digital marketing",
-        "Web development"
+        "Web development",
+        "Analytics",
+        "UX thinking",
+        "Funnel optimization"
       ],
       experience: [
         "Growth Manager – Megamind Studios",
@@ -1633,11 +1645,12 @@
       projects: [
         "SEO and growth planning for hospitality brands such as Hotel Éden in Karwar and Ember Castle by Éden in Gokarna",
         "Content strategy, FAQ planning, and local search optimization for hotel websites",
-        "SEO process improvement and tool planning for better keyword, backlink, and content workflows"
+        "SEO process improvement and tool planning for better keyword, backlink, and content workflows",
+        "Website optimization and growth-focused content planning"
       ],
-      education: "Education details can be shared on request or via LinkedIn profile.",
+      education: "Maruti has a BE in Electronics & Communication Engineering from MMEC, Belagavi under VTU.",
       contact: "You can reach Maruti via email at makhapare@gmail.com or call/WhatsApp at +91 8296016230.",
-      location: "India",
+      location: "Karnataka, India",
       resumeLink: "https://drive.google.com/file/d/1-3m3FNHJalQqXPFbeRWSXCIZQF0m2osX/view?usp=sharing",
       social: {
         linkedin: "https://www.linkedin.com/in/maruti-khapare/",
@@ -1646,8 +1659,20 @@
       }
     };
 
-    const fallbackReply =
-      "I only answer questions about Maruti Khapare, including his work, skills, projects, experience, contact details, and resume.";
+    const fallbackReply = `
+I can help you with Maruti Khapare’s profile.
+
+You can ask about:
+- Skills
+- Experience
+- Projects
+- Resume
+- Contact
+- Education
+- LinkedIn / Behance
+
+Resume:
+<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
 
     const toggleBtn = document.getElementById("chatbotToggle");
     const closeBtn = document.getElementById("chatbotClose");
@@ -1666,120 +1691,172 @@
     }
 
     function normalize(text) {
-      return text.toLowerCase().trim();
+      return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, "")
+        .trim();
     }
 
-    function isAboutMaruti(question) {
-      const q = normalize(question);
-      const allowedKeywords = [
-        "maruti", "you", "your", "experience", "skills", "project", "work",
-        "career", "resume", "cv", "contact", "linkedin", "instagram", "behance",
-        "education", "background", "portfolio", "location", "role", "services"
-      ];
-      return allowedKeywords.some(keyword => q.includes(keyword));
+    function levenshtein(a, b) {
+      const matrix = [];
+
+      for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+      }
+
+      for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+      }
+
+      for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+          if (b.charAt(i - 1) === a.charAt(j - 1)) {
+            matrix[i][j] = matrix[i - 1][j - 1];
+          } else {
+            matrix[i][j] = Math.min(
+              matrix[i - 1][j - 1] + 1,
+              matrix[i][j - 1] + 1,
+              matrix[i - 1][j] + 1
+            );
+          }
+        }
+      }
+
+      return matrix[b.length][a.length];
+    }
+
+    function isSimilar(input, keywords) {
+      const q = normalize(input);
+      const words = q.split(/\s+/);
+
+      return keywords.some(keyword => {
+        const key = normalize(keyword);
+
+        if (q.includes(key)) return true;
+
+        return words.some(word => {
+          if (word.length < 3) return false;
+
+          const distance = levenshtein(word, key);
+
+          if (key.length <= 4) {
+            return distance <= 1;
+          }
+
+          return distance <= 2;
+        });
+      });
     }
 
     function getResponse(question) {
       const q = normalize(question);
 
-      if (!isAboutMaruti(q)) return fallbackReply;
-
-      if (q.includes("about") || q.includes("who is") || q.includes("tell me about")) {
+      if (isSimilar(q, ["about", "who", "intro", "introduction", "profile", "maruti", "khapare"])) {
         return `${portfolioData.intro}
 
-Current role: ${portfolioData.role}
+Current role:
+${portfolioData.role}
 
-Want full details? Check the resume:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("role") || q.includes("what does") || q.includes("current job") || q.includes("current role")) {
+      if (isSimilar(q, ["role", "job", "work", "profession", "current", "does", "position"])) {
         return `${portfolioData.role}
 
-Want full details? Check the resume:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("skill") || q.includes("expertise") || q.includes("specialize")) {
-        return `Maruti’s key skills include: ${portfolioData.skills.join(", ")}.
+      if (isSimilar(q, ["skill", "skills", "expertise", "specialization", "seo", "marketing", "growth", "technical"])) {
+        return `Maruti’s key skills include:
+- ${portfolioData.skills.join("\n- ")}
 
-Want full details? Check the resume:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("experience") || q.includes("career") || q.includes("worked") || q.includes("job")) {
+      if (isSimilar(q, ["experience", "career", "worked", "company", "companies", "previous", "employment"])) {
         return `Maruti’s experience includes:
 - ${portfolioData.experience.join("\n- ")}
 
-Want full details? Check the resume:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("project") || q.includes("case study") || q.includes("portfolio work")) {
+      if (isSimilar(q, ["project", "projects", "case", "study", "portfolio", "work samples", "case study"])) {
         return `Some of Maruti’s projects include:
 - ${portfolioData.projects.join("\n- ")}
 
-Want full details? Check the resume:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("education") || q.includes("study") || q.includes("qualification")) {
+      if (isSimilar(q, ["education", "study", "qualification", "degree", "college", "engineering"])) {
         return `${portfolioData.education}
 
-You can also check the resume here:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (
-        q.includes("contact") ||
-        q.includes("reach") ||
-        q.includes("email") ||
-        q.includes("linkedin") ||
-        q.includes("instagram") ||
-        q.includes("behance")
-      ) {
+      if (isSimilar(q, ["contact", "email", "phone", "call", "whatsapp", "reach", "mobile", "number"])) {
         return `${portfolioData.contact}
 
-LinkedIn: ${portfolioData.social.linkedin}
-Instagram: ${portfolioData.social.instagram}
-Behance: ${portfolioData.social.behance}
+LinkedIn:
+<a href="${portfolioData.social.linkedin}" target="_blank">View LinkedIn</a>
 
-You can also view the resume here:
+Behance:
+<a href="${portfolioData.social.behance}" target="_blank">View Behance</a>
+
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("resume") || q.includes("cv")) {
+      if (isSimilar(q, ["resume", "cv", "download", "biodata"])) {
         return `You can view and download Maruti's resume here:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("location") || q.includes("based")) {
+      if (isSimilar(q, ["location", "based", "place", "city", "where"])) {
         return `${portfolioData.name} is based in ${portfolioData.location}.
 
-You can also view the resume here:
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      if (q.includes("service") || q.includes("services")) {
-        return `Maruti works across SEO, growth marketing, content strategy, website optimization, and digital marketing execution.
+      if (isSimilar(q, ["linkedin", "instagram", "behance", "social", "profile"])) {
+        return `Maruti’s profiles:
 
-For full details, check the resume:
+LinkedIn:
+<a href="${portfolioData.social.linkedin}" target="_blank">View LinkedIn</a>
+
+Instagram:
+<a href="${portfolioData.social.instagram}" target="_blank">View Instagram</a>
+
+Behance:
+<a href="${portfolioData.social.behance}" target="_blank">View Behance</a>`;
+      }
+
+      if (isSimilar(q, ["service", "services", "offer", "help"])) {
+        return `Maruti works across SEO, growth marketing, content strategy, website optimization, analytics, and digital marketing execution.
+
+Resume:
 <a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
       }
 
-      return `${portfolioData.intro}
-
-Ask about skills, experience, projects, contact details, or resume.
-
-You can also view the resume here:
-<a href="${portfolioData.resumeLink}" target="_blank">View Resume</a>`;
+      return fallbackReply;
     }
 
     function handleQuestion(question) {
       if (!question.trim()) return;
+
       addMessage(question, "user");
+
       const response = getResponse(question);
-      setTimeout(() => addMessage(response, "bot"), 200);
+
+      setTimeout(() => {
+        addMessage(response, "bot");
+      }, 200);
     }
 
     toggleBtn.addEventListener("click", () => {
@@ -1792,8 +1869,10 @@ You can also view the resume here:
 
     chatForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
       const question = chatInput.value;
       handleQuestion(question);
+
       chatInput.value = "";
     });
 
