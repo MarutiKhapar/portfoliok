@@ -956,10 +956,25 @@
 
   
   mixpanel.init('916923605ccf9f5c2bbbc70b56b70b96', {
-    autocapture: true,
+    // Capture useful browser behaviour without capturing element text content.
+    autocapture: {
+      pageview: 'url-with-path-and-query-string',
+      click: true,
+      dead_click: true,
+      input: true,
+      rage_click: true,
+      scroll: true,
+      submit: true,
+      capture_text_content: false
+    },
+    // Record sessions for this low-traffic portfolio site.
     record_sessions_percent: 100,
-    api_host: 'https://api-eu.mixpanel.com',
-  })
+    record_heatmap_data: true,
+    // Recommended modern UTM behaviour.
+    stop_utm_persistence: true,
+    // Your Mixpanel project uses EU data residency.
+    api_host: 'https://api-eu.mixpanel.com'
+  });
 
 </script>
 </head>
@@ -1455,7 +1470,7 @@
     </div>
 
     <form id="chatForm" class="chat-form">
-      <input id="chatInput" type="text" placeholder="Ask something about Maruti..." />
+      <input id="chatInput" class="mp-sensitive" type="text" placeholder="Ask something about Maruti..." autocomplete="off" />
       <button type="submit">Send</button>
     </form>
   </div>
@@ -1906,6 +1921,167 @@ Resume:
   })();
 </script>
 <!-- Portfolio Chatbot Widget End -->
+
+
+<!-- Mixpanel Portfolio Event Tracking Start -->
+<script>
+  (function () {
+    if (!window.mixpanel || typeof window.mixpanel.track !== 'function') return;
+
+    const SITE_NAME = 'Maruti Khapare Portfolio';
+
+    // Properties automatically attached to every manual event below.
+    mixpanel.register({
+      site_name: SITE_NAME,
+      hosting_platform: 'Vercel',
+      site_type: 'Portfolio',
+      site_version: '2026-08-mixpanel'
+    });
+
+    // A clear business-friendly event in addition to Mixpanel's automatic pageview.
+    mixpanel.track('Portfolio Viewed', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+      page_url: window.location.href,
+      referrer: document.referrer || 'Direct'
+    });
+
+    // Track meaningful sections only once per page load when they are actually viewed.
+    const sectionEvents = {
+      'why-pm': 'Why Product Viewed',
+      'work': 'Case Studies Viewed',
+      'skills': 'Skills Viewed',
+      'experience': 'Experience Viewed',
+      'credentials': 'Credentials Viewed',
+      'contact': 'Contact Viewed'
+    };
+
+    const viewedSections = new Set();
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const sectionId = entry.target.id;
+          const eventName = sectionEvents[sectionId];
+
+          if (!eventName || viewedSections.has(sectionId)) return;
+
+          viewedSections.add(sectionId);
+          mixpanel.track(eventName, {
+            section_id: sectionId,
+            page_path: window.location.pathname
+          });
+
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.35
+      });
+
+      Object.keys(sectionEvents).forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) observer.observe(section);
+      });
+    }
+
+    function getClickLocation(element) {
+      if (!element) return 'Unknown';
+
+      const section = element.closest('section');
+      if (section) return section.id || 'Section';
+
+      if (element.closest('nav')) return 'Navigation';
+      if (element.closest('#maruti-chatbot')) return 'Chatbot';
+      if (element.closest('footer')) return 'Footer';
+
+      return 'Other';
+    }
+
+    // Event delegation also catches links that the chatbot creates dynamically.
+    document.addEventListener('click', function (event) {
+      const clicked = event.target.closest('a, button');
+      if (!clicked) return;
+
+      const location = getClickLocation(clicked);
+
+      // Chatbot interactions.
+      if (clicked.id === 'chatbotToggle') {
+        mixpanel.track('Chatbot Opened', { location });
+        return;
+      }
+
+      if (clicked.id === 'chatbotClose') {
+        mixpanel.track('Chatbot Closed', { location });
+        return;
+      }
+
+      if (clicked.matches('#maruti-chatbot .chip')) {
+        mixpanel.track('Chatbot Suggestion Clicked', {
+          suggestion: clicked.textContent.trim(),
+          location
+        });
+        return;
+      }
+
+      // Navigation / internal-section clicks.
+      if (clicked.tagName === 'A') {
+        const rawHref = clicked.getAttribute('href') || '';
+        const href = clicked.href || rawHref;
+
+        if (rawHref.startsWith('#')) {
+          mixpanel.track('Navigation Clicked', {
+            target_section: rawHref.replace('#', '') || 'top',
+            link_text: clicked.textContent.trim(),
+            location
+          });
+          return;
+        }
+
+        // High-intent portfolio actions.
+        if (href.includes('linkedin.com/in/maruti-khapare')) {
+          mixpanel.track('LinkedIn Clicked', { location });
+          return;
+        }
+
+        if (href.includes('behance.net/NovaNest')) {
+          mixpanel.track('Behance Clicked', { location });
+          return;
+        }
+
+        if (rawHref.startsWith('mailto:')) {
+          mixpanel.track('Email Clicked', { location });
+          return;
+        }
+
+        if (rawHref.startsWith('tel:')) {
+          mixpanel.track('Phone Clicked', { location });
+          return;
+        }
+
+        if (href.includes('drive.google.com/file/')) {
+          mixpanel.track('Resume Clicked', { location });
+          return;
+        }
+      }
+    });
+
+    // Do not send the user's chatbot question text to Mixpanel.
+    document.addEventListener('submit', function (event) {
+      if (event.target.id !== 'chatForm') return;
+
+      const input = document.getElementById('chatInput');
+      const questionLength = input && input.value ? input.value.trim().length : 0;
+
+      mixpanel.track('Chatbot Question Asked', {
+        question_length: questionLength,
+        has_question: questionLength > 0
+      });
+    });
+  })();
+</script>
+<!-- Mixpanel Portfolio Event Tracking End -->
 
 </body>
 </html>
