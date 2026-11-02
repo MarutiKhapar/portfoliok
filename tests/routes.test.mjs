@@ -10,9 +10,8 @@ test('case study is indexable, linked and contains its substantive sections', as
   assert.match(html, /rel="canonical" href="https:\/\/maruti-khapare\.vercel\.app\/work\/olraa"/);
   for (const id of ['overview', 'strategy', 'content', 'execution', 'results', 'sources']) assert.ok(html.includes(`id="${id}"`), id);
   assert.match(html, /<table/);
-  assert.match(html, /Order value/);
-  assert.match(html, /reported month/);
-  assert.match(html, /not channel-attributed revenue/);
+  assert.match(html, /olraa-wordmark">OLRAA/);
+  assert.doesNotMatch(html, /Order value|A growing order book|reported month|result-panel/);
   assert.doesNotMatch(html, /0\.9%|nine.month|9.month|February|August/);
 });
 
