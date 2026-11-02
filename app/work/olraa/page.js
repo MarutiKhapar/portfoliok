@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: { title: 'Olraa — From catalogue complexity to search discovery', description: 'An international ecommerce SEO and integrated growth case study by Maruti Khapare.', url: '/work/olraa', type: 'article', images: [{ url: '/olraa-social.png', width: 1200, height: 630, alt: 'Olraa international ecommerce SEO case study by Maruti Khapare' }] },
   twitter: { card: 'summary_large_image', title: 'Olraa — International Ecommerce SEO | Maruti Khapare', images: ['/olraa-social.png'] },
 };
-export const viewport = { themeColor: '#faf9f5' };
+export const viewport = { themeColor: '#fdfcff' };
 
 const sections = [['overview', 'Overview'], ['strategy', 'Strategy'], ['content', 'Content'], ['execution', 'Execution'], ['results', 'Results']];
 const verticals = ['Food', 'Ayurveda', 'Homeopathy', 'Unani', 'Supplements', 'Pet Zone'];
@@ -27,7 +27,7 @@ function Arrow() { return <span aria-hidden="true">↗</span>; }
 export default function Olraa() {
   return <div className="case-study" id="top">
     <a className="skip-link" href="#main-content">Skip to case study</a>
-    <header className="case-header"><div className="case-wrap header-inner"><a className="signature" href="/" aria-label="Maruti Khapare portfolio home"><span className="monogram">mk.</span><span>Maruti Khapare<small>SEARCH. STRATEGY. GROWTH.</small></span></a><nav aria-label="Portfolio navigation"><a href="/#work">All work</a><a className="header-contact" href="mailto:makhapare@gmail.com">Let’s talk <Arrow /></a></nav></div></header>
+    <header className="case-header"><div className="case-wrap header-inner"><a className="signature" href="/" aria-label="Maruti Khapare portfolio home"><span className="monogram">MK</span><span>Maruti Khapare<small>SEARCH. STRATEGY. GROWTH.</small></span></a><nav aria-label="Portfolio navigation"><a href="/#work">All work</a><a className="header-contact" href="mailto:makhapare@gmail.com">Let’s talk <Arrow /></a></nav></div></header>
     <main id="main-content">
       <section className="case-hero"><div className="case-wrap">
         <div className="hero-meta"><a href="/#work">← Selected work</a><span>CASE STUDY 01 <i /> INTERNATIONAL ECOMMERCE</span></div>
@@ -62,6 +62,6 @@ export default function Olraa() {
 
       <section className="case-section case-wrap sources-section" id="sources"><div><span className="micro">SOURCE NOTES</span><h2>Evidence behind the story.</h2><p>The strategy, responsibilities, team structure and historical results come from Maruti’s account. Published content provides examples of the approach; it does not establish individual article performance.</p></div><div className="source-list"><a href={`${site}/us`} target="_blank" rel="noopener noreferrer"><span>01</span>Olraa storefront<Arrow /></a><a href={`${site}/us/blogs`} target="_blank" rel="noopener noreferrer"><span>02</span>Published blog listing<Arrow /></a><a href={`${site}/blogs/indian-grocery-online-rising-demand-for-indian-products`} target="_blank" rel="noopener noreferrer"><span>03</span>Awareness article · full text reviewed<Arrow /></a><a href={`${site}/blogs/ultimate-black-friday-sale-deals`} target="_blank" rel="noopener noreferrer"><span>04</span>Black Friday guide · Maruti’s byline<Arrow /></a><p>The Makar Sankranti example was assessed from its listing title and description. The XML sitemap was not retrievable during this review; historical index counts remain self-reported.</p></div></section>
       <section className="case-cta"><div className="case-wrap"><span className="eyebrow">LET’S BUILD YOUR NEXT CHAPTER</span><h2>Good growth starts<br />with a clear strategy.</h2><div><a className="case-button" href="mailto:makhapare@gmail.com">Start a conversation <Arrow /></a><a className="text-link" href="/#work">Explore more work <Arrow /></a></div></div></section>
-    </main><footer className="case-footer"><div className="case-wrap"><a className="monogram" href="/" aria-label="Portfolio home">mk.</a><p>Maruti Khapare · Search, strategy & growth</p><a href="#top">Back to top ↑</a></div></footer>
+    </main><footer className="case-footer"><div className="case-wrap"><a className="monogram" href="/" aria-label="Portfolio home">MK</a><p>Maruti Khapare · Search, strategy & growth</p><a href="#top">Back to top ↑</a></div></footer>
   </div>;
 }
