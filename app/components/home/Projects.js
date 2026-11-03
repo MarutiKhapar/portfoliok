@@ -56,67 +56,17 @@ export default function Projects() {
           </button>
         </div>
         <div className="project-grid" id="projects">
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"International · E-commerce SEO"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>
-              <a href="/work/olraa">{"Olraa"}</a>
-            </h3>
-            <p>
-              {
-                "International ecommerce SEO, catalogue architecture and intent-led content. Explore the work behind a reported 120,000 indexed pages and a growing organic search presence."
-              }
-            </p>
+          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
+            <div className="project-top"><span className="eyetag">E-commerce · Organic Growth</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
+            <h3>Olraa &amp; The Desi Food</h3>
+            <p>E-commerce SEO across catalogue structure, indexing and intent-led content. Olraa’s reported search presence includes 120,000 indexed pages; The Desi Food’s work focused on organic acquisition and sales.</p>
             <div className="project-bottom">
-              <strong>{"~1.8M impressions · ~20k search clicks"}</strong>
+              <strong>The Desi Food: ₹4 lakh organic revenue</strong>
+              <strong>Olraa: ~1.2M impressions · ~20k clicks</strong>
               <div className="project-links">
-                <a href="/work/olraa">
-                  {"Read case study "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-                <a
-                  href="https://olraa.com/us"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"Visit Olraa "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"Revenue · E-commerce SEO"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>{"The Desi Food"}</h3>
-            <p>
-              {
-                "Organic acquisition and e-commerce SEO for a food retail website, with reported organic-attributed sales."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"₹4 lakh organic revenue"}</strong>
-              <div className="project-links">
-                <a
-                  href="https://thedesifood.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"thedesifood.com "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
+                <a href="https://olraa.com/us" target="_blank" rel="noopener noreferrer">Olraa website <span aria-hidden="true">↗</span></a>
+                <a href="https://thedesifood.com" target="_blank" rel="noopener noreferrer">The Desi Food website <span aria-hidden="true">↗</span></a>
+                <a href="/work/olraa">Olraa case study <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </article>

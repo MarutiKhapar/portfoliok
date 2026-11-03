@@ -22,7 +22,7 @@ test("case study is indexable, linked and contains its substantive sections", as
     assert.ok(html.includes(`id="${id}"`), id);
   assert.match(html, /class="content-journey"/);
   assert.match(html, /120k/);
-  assert.match(html, /~1\.8 million/);
+  assert.match(html, /~1\.2 million/);
   assert.match(html, /olraa-wordmark">OLRAA/);
   assert.doesNotMatch(
     html,

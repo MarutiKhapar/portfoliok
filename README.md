@@ -60,7 +60,7 @@ Slots last 30 minutes, Monday–Friday, starting 09:00–17:30 IST, within 60 da
 
 ## Case-study evidence and assets
 
-Historical figures are approximate, self-reported recollections, not independently audited exports. OLRAA reports approximately 1.8 million impressions, 20,000 search clicks and 120,000 indexed pages. No reporting period, CTR, SEO-attributed revenue or intermediate performance observations are inferred.
+Historical figures are approximate, self-reported recollections, not independently audited exports. OLRAA reports approximately 1.2 million impressions, 20,000 search clicks and 120,000 indexed pages. No reporting period, CTR, SEO-attributed revenue or intermediate performance observations are inferred.
 
 Published brand creatives illustrate seasonal messaging; they do not prove individual authorship or performance. External framework references are linked on the case-study page. General technical considerations and post-purchase suggestions are distinguished from confirmed engagement work.
 
