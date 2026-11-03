@@ -16,13 +16,13 @@ pnpm start
 ## Source structure
 
 - `app/page.js`: homepage composition and metadata.
-- `app/components/home/`: homepage sections, React navigation and project filters, chatbot, booking form and analytics loader.
+- `app/components/home/`: homepage sections, React navigation and project filters, chatbot, booking form and FAQ.
 - `app/home.css`: homepage styles scoped to the homepage body.
 - `app/work/olraa/`: case-study page and scoped styles.
 - `app/api/book-call/route.js`: server-only booking endpoint.
 - `app/layout.js`: shared document, fonts and default metadata.
 - `app/robots.js` and `app/sitemap.js`: generated search-engine routes.
-- `public/`: campaign images, social preview and analytics script. The SVG social-preview source is retained alongside the published PNG.
+- `public/`: campaign images, social preview and analytics script. Social preview images are served through Next.js metadata routes, with the existing OLRAA PNG retained.
 - `tests/routes.test.mjs`: production-route regression checks.
 
 The homepage renders native JSX. There is no legacy HTML file, runtime HTML parsing, duplicate booking handler or source-export script.
@@ -64,4 +64,4 @@ Historical figures are approximate, self-reported recollections, not independent
 
 Published brand creatives illustrate seasonal messaging; they do not prove individual authorship or performance. External framework references are linked on the case-study page. General technical considerations and post-purchase suggestions are distinguished from confirmed engagement work.
 
-Existing GA4, Clarity and Mixpanel integrations are loaded through `next/script`. Chatbot question text is not included in the manual Mixpanel question event.
+Site-wide GA4, Clarity and Mixpanel integrations are loaded once in the root layout through `next/script`. Chatbot question text is not included in the manual Mixpanel question event.

@@ -1,19 +1,9 @@
+import PageSchema from "../../components/StructuredData";
+import { pageMetadata } from "../../lib/seo";
 import "../olraa/olraa.css";
 import "./hospitality.css";
 
-export const metadata = {
-  title: "Hospitality Growth Case Study | Maruti Khapare",
-  description:
-    "Building digital visibility and booking channels for Hotel Éden and Ember Castle, and The Padival Grand through SEO, local discovery, OTAs, content and social media.",
-  alternates: { canonical: "/work/hospitality" },
-  openGraph: {
-    title: "From offline reputation to online discovery",
-    description:
-      "A hospitality brand, search and distribution case study by Maruti Khapare.",
-    url: "/work/hospitality",
-    type: "article",
-  },
-};
+export const metadata = pageMetadata("hospitality");
 
 const brands = [
   {
@@ -120,6 +110,7 @@ function Out({ href, children }) {
 export default function Hospitality() {
   return (
     <div className="case-study hospitality-study" id="top">
+      <PageSchema pageKey="hospitality" />
       <a className="skip-link" href="#main-content">
         Skip to case study
       </a>
@@ -314,15 +305,6 @@ export default function Hospitality() {
                 </article>
               ))}
             </div>
-            <aside className="data-note">
-              <strong>Shared delivery</strong>
-              <p>
-                This was team-delivered work. The case study describes Maruti’s
-                stated areas of contribution without attributing every design,
-                platform integration or operational change to one person.
-                Detailed implementation logs are unavailable.
-              </p>
-            </aside>
           </div>
         </section>
         <section className="case-section case-wrap" id="content">
@@ -428,7 +410,12 @@ export default function Hospitality() {
                 <div className="ota-chips">
                   <span>MakeMyTrip</span>
                   <span>Goibibo</span>
-                  <span>Yatra</span><span>Cleartrip</span><span>EaseMyTrip</span><span>ixigo</span><span>Booking.com</span><span>Agoda</span>
+                  <span>Yatra</span>
+                  <span>Cleartrip</span>
+                  <span>EaseMyTrip</span>
+                  <span>ixigo</span>
+                  <span>Booking.com</span>
+                  <span>Agoda</span>
                 </div>
               </div>
               <div className="ota-market">
@@ -443,10 +430,6 @@ export default function Hospitality() {
                   <span>Agoda</span>
                 </div>
               </div>
-              <p className="ota-footnote">
-                Platform names describe the distribution approach; availability
-                can vary by property and date.
-              </p>
             </div>
           </div>
         </section>
@@ -488,15 +471,6 @@ export default function Hospitality() {
                 </article>
               ))}
             </div>
-            <aside className="data-note">
-              <strong>Results in context</strong>
-              <p>
-                Outcomes are described qualitatively from Maruti’s account.
-                Booking volumes and commercial figures are not disclosed. No
-                percentage lift, revenue claim or individual-channel attribution
-                is inferred.
-              </p>
-            </aside>
           </div>
         </section>
         <section className="case-section case-wrap" id="evidence">
@@ -567,15 +541,12 @@ export default function Hospitality() {
             </div>
           </div>
           <div className="hotel-source-note">
-            <strong>Sources and scope</strong>
+            <strong>About this case study</strong>
             <p>
-              Engagement scope and qualitative outcomes: Maruti’s account.
-              Current evidence: linked brand websites, published articles,
-              travel-platform listings and Ubersuggest domain overviews. The
-              public websites have evolved; they are not archived
-              before-and-after snapshots. Google Business Profile edits,
-              influencer deliverables and booking-platform reports were not
-              independently audited.
+              I prepared this case study to document my contribution and the
+              team’s work across the hotel brands. I reviewed the live websites,
+              published content and search data to present the approach,
+              execution and reported outcomes.
             </p>
             <Out href="https://hoteleden.in/">Éden website</Out>
             <Out href="https://thepadivalgrand.com/">Padival website</Out>

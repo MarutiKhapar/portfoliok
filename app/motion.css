@@ -1,0 +1,76 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :where(
+    .project,
+    .service,
+    .hotel-brand,
+    .article-example,
+    .hotel-content-grid article,
+    .hospitality-workstreams article
+  ) {
+    transition:
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+  :where(
+    .project,
+    .service,
+    .hotel-brand,
+    .article-example,
+    .hotel-content-grid article,
+    .hospitality-workstreams article
+  ):hover {
+    box-shadow: 0 16px 36px #59347b12;
+    border-color: #d4b5ef;
+  }
+  :where(.case-button, .header-contact, .btn) {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      filter 0.2s ease;
+  }
+  :where(.case-button, .header-contact, .btn):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px #a949f929;
+    filter: saturate(1.07);
+  }
+  :where(.case-button, .header-contact, .btn):active {
+    transform: translateY(0);
+  }
+  :where(
+    .project-links a,
+    .text-link,
+    .underlined-link,
+    .hotel-source-note a,
+    .hotel-brand > a
+  ) {
+    transition:
+      color 0.2s ease,
+      opacity 0.2s ease;
+  }
+  :where(
+    .project-links a,
+    .text-link,
+    .underlined-link,
+    .hotel-source-note a,
+    .hotel-brand > a
+  ):hover {
+    color: #9b43d9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

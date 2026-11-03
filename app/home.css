@@ -1089,3 +1089,66 @@ body:has(.topbar) {
     color: #626a90;
   }
 }
+
+body:has(.topbar) .portfolio-faq {
+  padding-block: 60px;
+}
+body:has(.topbar) .faq-list {
+  max-width: 900px;
+  margin: 28px auto 0;
+}
+body:has(.topbar) .faq-list details {
+  border-top: 1px solid #eae5f5;
+  padding: 0;
+}
+body:has(.topbar) .faq-list details:last-child {
+  border-bottom: 1px solid #eae5f5;
+}
+body:has(.topbar) .faq-list summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  font:
+    700 19px/1.5 Outfit,
+    sans-serif;
+  list-style: none;
+  padding: 22px 0;
+}
+body:has(.topbar) .faq-list summary::-webkit-details-marker {
+  display: none;
+}
+body:has(.topbar) .faq-list summary > span {
+  color: #a949f9;
+  font-size: 25px;
+  transition: transform 0.2s ease;
+  flex: none;
+}
+body:has(.topbar) .faq-list details[open] summary > span {
+  transform: rotate(45deg);
+}
+body:has(.topbar) .faq-list p {
+  color: #626a90;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 800px;
+  margin: 0 35px 22px 0;
+}
+body:has(.topbar) .faq-list summary:focus-visible {
+  outline: 2px solid #b158ee;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+@media (max-width: 520px) {
+  body:has(.topbar) .portfolio-faq {
+    padding-block: 40px;
+  }
+  body:has(.topbar) .faq-list summary {
+    font-size: 17px;
+    padding: 18px 0;
+  }
+  body:has(.topbar) .faq-list p {
+    font-size: 13px;
+  }
+}
