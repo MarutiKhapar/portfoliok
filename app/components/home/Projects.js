@@ -61,8 +61,8 @@ export default function Projects() {
             <h3>Olraa &amp; The Desi Food</h3>
             <p>E-commerce SEO across catalogue structure, indexing and intent-led content. Olraa’s reported search presence includes 120,000 indexed pages; The Desi Food’s work focused on organic acquisition and sales.</p>
             <div className="project-bottom">
-              <strong>The Desi Food: ₹4 lakh organic revenue</strong>
-              <strong>Olraa: ~1.2M impressions · ~20k clicks</strong>
+              <strong>₹4 lakh organic revenue</strong>
+              <strong>~1.2M impressions · ~20k clicks</strong>
               <div className="project-links">
                 <a href="https://olraa.com/us" target="_blank" rel="noopener noreferrer">Olraa website <span aria-hidden="true">↗</span></a>
                 <a href="https://thedesifood.com" target="_blank" rel="noopener noreferrer">The Desi Food website <span aria-hidden="true">↗</span></a>
