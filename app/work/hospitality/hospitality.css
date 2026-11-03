@@ -1,0 +1,347 @@
+.hospitality-study .hero-layout {
+  grid-template-columns: 1.15fr 1fr;
+  gap: 45px;
+}
+.hospitality-study h1 {
+  font-size: clamp(45px, 5vw, 70px);
+}
+.hospitality-study .hotel-system {
+  background: linear-gradient(130deg, #f3e6ff, #fff1e9);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px;
+}
+.hotel-system svg {
+  display: block;
+  width: 145px;
+  margin: 20px auto;
+  color: #a949f9;
+}
+.hotel-system > strong {
+  display: block;
+  font-family: Outfit, sans-serif;
+  font-size: 26px;
+  line-height: 1.35;
+}
+.hotel-system > p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 18px;
+}
+.hotel-touchpoints {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 23px;
+}
+.hotel-touchpoints span {
+  padding: 10px;
+  background: #ffffffb0;
+  border-radius: 8px;
+  font-size: 11px;
+}
+.hospitality-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+  gap: 20px;
+}
+.hospitality-stats strong {
+  font-family: Outfit, sans-serif;
+  font-size: 34px;
+  display: block;
+}
+.hospitality-stats span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.hospitality-stats > p {
+  grid-column: 1/-1;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 850px;
+}
+.hotel-brand-grid,
+.hotel-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 35px;
+}
+.hotel-brand,
+.hotel-results-grid > article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  background: #fff;
+}
+.hotel-brand h3,
+.hotel-results-grid h3 {
+  font-size: 26px;
+  margin: 12px 0;
+}
+.hotel-brand p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 14px 0;
+}
+.hotel-brand .brand-detail {
+  font-size: 11px;
+  color: var(--ink);
+}
+.hotel-brand a,
+.hotel-content-grid a {
+  display: inline-flex;
+  gap: 12px;
+  font-size: 12px;
+  border-bottom: 1px solid #d7c7ef;
+  padding-bottom: 8px;
+}
+.hospitality-workstreams {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 35px;
+}
+.hospitality-workstreams article {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+.hospitality-workstreams article:last-child {
+  grid-column: 1/-1;
+}
+.hospitality-workstreams h3 {
+  font-size: 22px;
+  margin: 13px 0;
+}
+.hospitality-workstreams p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.hotel-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 35px;
+}
+.hotel-content-grid article {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+.hotel-content-grid article > div:last-child {
+  padding: 25px;
+}
+.hotel-content-art {
+  padding: 24px;
+  background: #eee0ff;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hotel-content-art span {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+.hotel-content-art strong {
+  font:
+    800 45px/1.1 Outfit,
+    sans-serif;
+  letter-spacing: -1.5px;
+}
+.hotel-art-1,
+.hotel-art-3 {
+  background: #fff0e8;
+}
+.hotel-art-2 {
+  background: #e8e8ff;
+}
+.hotel-content-grid h3 {
+  font-size: 23px;
+  margin: 12px 0;
+}
+.hotel-content-grid p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 12px 0 20px;
+}
+.hospitality-distribution {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.hospitality-distribution h2 {
+  font-size: clamp(32px, 4vw, 49px) !important;
+  margin: 15px 0;
+}
+.hospitality-distribution p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.distribution-proof {
+  padding: 28px;
+  border: 1px solid #eae5f5;
+  border-radius: 16px;
+  background: #ffffffa0;
+}
+.distribution-proof h3 {
+  font-size: 23px;
+  margin: 12px 0;
+}
+.distribution-proof > a {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 15px;
+}
+.distribution-proof p {
+  font-size: 10px;
+  margin-top: 18px;
+}
+.hotel-results-grid dl {
+  margin: 20px 0;
+}
+.hotel-results-grid dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+.hotel-results-grid dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+.hotel-results-grid dd {
+  font:
+    600 29px Outfit,
+    sans-serif;
+  margin: 0;
+  white-space: nowrap;
+}
+.hotel-results-grid article > p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.hotel-source-note {
+  background: #f5efff;
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 30px;
+}
+.hotel-source-note strong {
+  font-size: 13px;
+}
+.hotel-source-note p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.hotel-source-note a {
+  font-size: 11px;
+  margin-right: 20px;
+  display: inline-block;
+  padding: 7px 0;
+}
+.hospitality-study table {
+  width: 100%;
+  margin-top: 28px;
+}
+.hospitality-study tbody th small {
+  display: block;
+}
+.hospitality-study .challenge-summary {
+  margin-top: 25px;
+  padding: 24px;
+  background: #f5efff;
+  border-radius: 14px;
+}
+.hospitality-study .challenge-summary > p {
+  font-size: 22px;
+  line-height: 1.45;
+  margin: 12px 0;
+}
+.hospitality-study .challenge-summary > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hospitality-study .challenge-summary > div > span {
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 7px 11px;
+  background: #fff;
+}
+@media (max-width: 800px) {
+  .hospitality-study .hero-layout {
+    grid-template-columns: 1fr;
+  }
+  .hospitality-distribution {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .hotel-system {
+    max-width: none;
+  }
+  .hospitality-stats strong {
+    font-size: 29px;
+  }
+  .hotel-brand,
+  .hotel-results-grid > article {
+    padding: 22px;
+  }
+}
+@media (max-width: 520px) {
+  .hospitality-study h1 {
+    font-size: 43px;
+  }
+  .hotel-brand-grid,
+  .hotel-results-grid,
+  .hotel-content-grid,
+  .hospitality-workstreams {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .hospitality-workstreams article:last-child {
+    grid-column: auto;
+  }
+  .hospitality-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hospitality-stats > div:last-of-type {
+    grid-column: 1/-1;
+  }
+  .hospitality-stats strong {
+    font-size: 31px;
+  }
+  .hospitality-study table {
+    min-width: 440px;
+  }
+  .hotel-system > strong {
+    font-size: 23px;
+  }
+  .hospitality-study .hotel-system {
+    padding: 24px;
+  }
+  .hospitality-study .challenge-summary > p {
+    font-size: 19px;
+  }
+}

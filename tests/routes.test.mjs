@@ -68,3 +68,29 @@ test("booking API rejects GET without invoking external booking services", async
 test("missing pages return a real 404", async () => {
   assert.equal((await fetch(`${origin}/work/not-a-project`)).status, 404);
 });
+
+test("hospitality case study separates reported bookings from current search estimates", async () => {
+  const response = await fetch(`${origin}/work/hospitality`);
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(
+    html,
+    /rel="canonical" href="https:\/\/maruti-khapare\.vercel\.app\/work\/hospitality"/,
+  );
+  for (const id of ["challenge", "approach", "content", "results", "evidence"])
+    assert.ok(html.includes(`id="${id}"`));
+  for (const text of [
+    "Ember Castle",
+    "~10–15",
+    "~40–60",
+    "October 2026",
+    "1,427",
+    "Historical platform exports are unavailable",
+  ])
+    assert.ok(html.includes(text), text);
+  assert.match(html, /href="https:\/\/hoteleden\.in\//);
+  const home = await fetch(origin).then((r) => r.text());
+  assert.match(home, /href="\/work\/hospitality"/);
+  const sitemap = await fetch(`${origin}/sitemap.xml`).then((r) => r.text());
+  assert.ok(sitemap.includes("/work/hospitality"));
+});

@@ -149,29 +149,125 @@ export default function Projects() {
               </div>
             </div>
           </article>
-          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
-            <div className="project-top"><span className="eyetag">Shipping &amp; Logistics · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
-            <h3>Velocity Express, The Atlantic International &amp; Unique Express</h3><p>SEO across shipping and logistics brands, covering technical foundations, keyword strategy, on-page optimisation and internal linking, with programmatic landing-page work for Unique Express.</p>
-            <div className="project-bottom"><strong>Technical &amp; programmatic SEO</strong><div className="project-links">
-              <a href="https://velexp.com/" target="_blank" rel="noopener noreferrer">Velocity Express <span aria-hidden="true">↗</span></a>
-<a href="https://atlanticcourier.net/" target="_blank" rel="noopener noreferrer">The Atlantic International <span aria-hidden="true">↗</span></a>
-<a href="https://uniqueexpress.net" target="_blank" rel="noopener noreferrer">Unique Express <span aria-hidden="true">↗</span></a>
-            </div></div>
+          <article
+            className="project"
+            data-cat="seo"
+            hidden={filter !== "all" && filter !== "seo"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Shipping &amp; Logistics · SEO</span>
+              <span className="pr-icon" aria-hidden="true">
+                ⌕
+              </span>
+            </div>
+            <h3>
+              Velocity Express, The Atlantic International &amp; Unique Express
+            </h3>
+            <p>
+              SEO across shipping and logistics brands, covering technical
+              foundations, keyword strategy, on-page optimisation and internal
+              linking, with programmatic landing-page work for Unique Express.
+            </p>
+            <div className="project-bottom">
+              <strong>Technical &amp; programmatic SEO</strong>
+              <div className="project-links">
+                <a
+                  href="https://velexp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Velocity Express <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://atlanticcourier.net/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Atlantic International <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://uniqueexpress.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Unique Express <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
           </article>
-          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
-            <div className="project-top"><span className="eyetag">Healthcare · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
-            <h3>One Dental</h3><p>End-to-end SEO for a dental healthcare website, tailored to treatment-related searches and local service demand.</p>
-            <div className="project-bottom"><strong>Healthcare search strategy</strong><div className="project-links">
-              <a href="https://onedentall.com" target="_blank" rel="noopener noreferrer">One Dental <span aria-hidden="true">↗</span></a>
-            </div></div>
+          <article
+            className="project"
+            data-cat="seo"
+            hidden={filter !== "all" && filter !== "seo"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Healthcare · SEO</span>
+              <span className="pr-icon" aria-hidden="true">
+                ⌕
+              </span>
+            </div>
+            <h3>One Dental</h3>
+            <p>
+              End-to-end SEO for a dental healthcare website, tailored to
+              treatment-related searches and local service demand.
+            </p>
+            <div className="project-bottom">
+              <strong>Healthcare search strategy</strong>
+              <div className="project-links">
+                <a
+                  href="https://onedentall.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  One Dental <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
           </article>
-          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
-            <div className="project-top"><span className="eyetag">Hospitality · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
-            <h3>Hotel Eden &amp; The Padival Grand</h3><p>SEO for two hospitality websites, aligning technical foundations and on-page content with hotel-related searches and local discovery.</p>
-            <div className="project-bottom"><strong>Hospitality search strategy</strong><div className="project-links">
-              <a href="https://hoteleden.com" target="_blank" rel="noopener noreferrer">Hotel Eden <span aria-hidden="true">↗</span></a>
-<a href="https://thepadivalgrand.com" target="_blank" rel="noopener noreferrer">The Padival Grand <span aria-hidden="true">↗</span></a>
-            </div></div>
+          <article
+            className="project"
+            data-cat="seo"
+            hidden={filter !== "all" && filter !== "seo"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Hospitality · 360° Digital Growth</span>
+              <span className="pr-icon" aria-hidden="true">
+                ⌕
+              </span>
+            </div>
+            <h3>
+              <a href="/work/hospitality">
+                  Hotel Industry
+              </a>
+            </h3>
+            <p>
+              Building online visibility for established offline brands: Hotel
+              Éden in Karwar and Ember Castle in Gokarna, plus The Padival Grand
+              in Puttur. Branding, local discovery, SEO, OTAs, social and
+              creator collaborations.
+            </p>
+            <div className="project-bottom">
+              <strong>Website &amp; OTA booking channels</strong>
+              <div className="project-links">
+                <a
+                  href="https://hoteleden.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Éden &amp; Ember Castle <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://thepadivalgrand.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Padival Grand <span aria-hidden="true">↗</span>
+                </a>
+                <a href="/work/hospitality">
+                  Read case study <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
           </article>
           <article
             className="project"
