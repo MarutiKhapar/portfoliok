@@ -17,7 +17,8 @@ export const metadata = {
 
 const brands = [
   {
-    name: "Éden hospitality group",
+    name: "Hotel Eden by Milan Hospitality",
+    logo: "/brands/hotel-eden-violet.svg",
     location: "Karwar + Gokarna",
     detail: "Hotel Éden, Karwar · Ember Castle by Éden, Gokarna",
     url: "https://hoteleden.in/",
@@ -25,7 +26,8 @@ const brands = [
       "A shared brand with separate destination journeys for Karwar and Gokarna. The live site connects property information with dining, events and destination content.",
   },
   {
-    name: "The Padival Grand",
+    name: "The Padival Grand by Mahaveer Ventures",
+    logo: "/brands/padival-grand-violet.svg",
     location: "Puttur",
     detail: "Hotel stays · dining · celebrations",
     url: "https://thepadivalgrand.com/",
@@ -115,25 +117,6 @@ function Out({ href, children }) {
     </a>
   );
 }
-function HotelMark() {
-  return (
-    <svg viewBox="0 0 160 130" fill="none" aria-hidden="true">
-      <path
-        d="M28 116V35l52-22 52 22v81M12 116h136M65 116V91h30v25"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M45 48h10v12H45zm30 0h10v12H75zm30 0h10v12h-10zM45 72h10v12H45zm30 0h10v12H75zm30 0h10v12h-10z"
-        fill="currentColor"
-        opacity=".5"
-      />
-      <path d="M67 29h26M80 22v14" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  );
-}
-
 export default function Hospitality() {
   return (
     <div className="case-study hospitality-study" id="top">
@@ -198,7 +181,13 @@ export default function Hospitality() {
               </div>
               <div className="hotel-system">
                 <span className="micro">A CONNECTED BOOKING PRESENCE</span>
-                <HotelMark />
+                <img
+                  className="resort-illustration"
+                  src="/illustrations/coastal-resort.svg"
+                  width="300"
+                  height="245"
+                  alt="Coastal resort illustration with a tiered hotel, sun and palm tree"
+                />
                 <strong>
                   Find the stay.
                   <br />
@@ -215,24 +204,19 @@ export default function Hospitality() {
                 <p>One brand experience across multiple guest touchpoints.</p>
               </div>
             </div>
-            <div className="hospitality-stats">
+            <div className="hospitality-focus">
               <div>
-                <strong>~10–15</strong>
-                <span>Website bookings / month</span>
+                <strong>Brand visibility</strong>
+                <span>Search, Maps and social discovery</span>
               </div>
               <div>
-                <strong>~40–60</strong>
-                <span>OTA bookings / month</span>
+                <strong>Booking access</strong>
+                <span>Website and travel platforms</span>
               </div>
               <div>
-                <strong>3 properties</strong>
-                <span>Across two brand groups</span>
+                <strong>Guest confidence</strong>
+                <span>Content and creator collaborations</span>
               </div>
-              <p>
-                Approximate monthly ranges reported by Maruti: per brand group,
-                with Éden’s Karwar and Gokarna properties combined. Historical
-                platform exports are unavailable.
-              </p>
             </div>
           </div>
         </section>
@@ -274,6 +258,13 @@ export default function Hospitality() {
           <div className="hotel-brand-grid">
             {brands.map((brand) => (
               <article className="hotel-brand" key={brand.name}>
+                <img
+                  className="hotel-brand-logo"
+                  src={brand.logo}
+                  alt={brand.name + " logo"}
+                  width="240"
+                  height="100"
+                />
                 <span className="micro">{brand.location}</span>
                 <h3>{brand.name}</h3>
                 <p className="brand-detail">{brand.detail}</p>
@@ -359,6 +350,21 @@ export default function Hospitality() {
                   aria-hidden="true"
                 >
                   <span>TRAVEL → DISCOVER → STAY</span>
+                  <img
+                    className="destination-vector"
+                    src={
+                      [
+                        "/illustrations/karwar.svg",
+                        "/illustrations/gokarna.svg",
+                        "/illustrations/puttur.svg",
+                        "/illustrations/travel-route.svg",
+                      ][i]
+                    }
+                    width="460"
+                    height="200"
+                    loading="lazy"
+                    alt=""
+                  />
                   <strong>
                     {["Karwar.", "Gokarna.", "Puttur.", "The journey."][i]}
                   </strong>
@@ -411,21 +417,35 @@ export default function Hospitality() {
               </div>
             </div>
             <div className="distribution-proof">
-              <span className="micro">PUBLIC LISTING EXAMPLES</span>
-              <h3>Travel-platform presence</h3>
-              <Out href="https://www.makemytrip.com/hotels/hotel_eden-details-karwar.html">
-                Hotel Éden · MakeMyTrip
-              </Out>
-              <Out href="https://www.goibibo.com/hotels/eden-hotel-in-karwar-3191183896332293853/">
-                Hotel Éden · Goibibo
-              </Out>
-              <Out href="https://www.makemytrip.com/hotels/the_padival_grand_a_unit_of_mahaveer_ventures-details-puttur_karnataka.html">
-                The Padival Grand · MakeMyTrip
-              </Out>
-              <p>
-                Examples confirm a current public listing presence, not who
-                created a listing, its historical performance or a complete OTA
-                inventory.
+              <span className="micro">DOMESTIC + INTERNATIONAL DISCOVERY</span>
+              <h3>A wider travel-platform presence</h3>
+              <div className="ota-market">
+                <h4>Indian travel market</h4>
+                <p>
+                  Distribution across major OTAs serving Indian travellers,
+                  including MakeMyTrip and Goibibo.
+                </p>
+                <div className="ota-chips">
+                  <span>MakeMyTrip</span>
+                  <span>Goibibo</span>
+                  <span>Other domestic OTAs</span>
+                </div>
+              </div>
+              <div className="ota-market">
+                <h4>International travel market</h4>
+                <p>
+                  Expedia and other globally used booking platforms extended the
+                  routes through which overseas guests could discover a stay.
+                </p>
+                <div className="ota-chips">
+                  <span>Expedia</span>
+                  <span>Booking.com</span>
+                  <span>Agoda</span>
+                </div>
+              </div>
+              <p className="ota-footnote">
+                Platform names describe the distribution approach; availability
+                can vary by property and date.
               </p>
             </div>
           </div>
@@ -447,37 +467,34 @@ export default function Hospitality() {
               barter-based influencer collaborations following the team’s work.
             </Intro>
             <div className="hotel-results-grid">
-              {brands.map((brand) => (
-                <article key={brand.name}>
-                  <span className="micro">{brand.name}</span>
-                  <h3>{brand.location}</h3>
-                  <dl>
-                    <div>
-                      <dt>Website bookings / month</dt>
-                      <dd>~10–15</dd>
-                    </div>
-                    <div>
-                      <dt>OTA bookings / month</dt>
-                      <dd>~40–60</dd>
-                    </div>
-                  </dl>
-                  <p>
-                    {brand.name.startsWith("Éden")
-                      ? "Combined for Hotel Éden, Karwar and Ember Castle by Éden, Gokarna."
-                      : "Reported for The Padival Grand."}
-                  </p>
+              {[
+                [
+                  "Stronger online discovery",
+                  "The brands became easier to find across search, local profiles, social media and travel platforms.",
+                ],
+                [
+                  "More booking opportunities",
+                  "Maruti reports increased bookings through website and OTA channels following the team’s work.",
+                ],
+                [
+                  "More creator collaborations",
+                  "Barter-based influencer partnerships added opportunities to introduce the properties to relevant audiences.",
+                ],
+              ].map(([title, copy]) => (
+                <article key={title}>
+                  <span className="micro">REPORTED OUTCOME</span>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
                 </article>
               ))}
             </div>
             <aside className="data-note">
-              <strong>How to read these figures</strong>
+              <strong>Results in context</strong>
               <p>
-                Approximate recollections supplied by Maruti. Website bookings
-                were described as organic; GA4, booking-engine and OTA exports
-                were not supplied to verify channel attribution. The engagement
-                dates, comparable baseline and revenue are unavailable. These
-                ranges are not incremental bookings, a conversion rate or a
-                measured percentage lift. No combined total is inferred.
+                Outcomes are described qualitatively from Maruti’s account.
+                Booking volumes and commercial figures are not disclosed. No
+                percentage lift, revenue claim or individual-channel attribution
+                is inferred.
               </p>
             </aside>
           </div>
@@ -552,8 +569,8 @@ export default function Hospitality() {
           <div className="hotel-source-note">
             <strong>Sources and scope</strong>
             <p>
-              Engagement scope and booking ranges: Maruti’s account. Current
-              evidence: linked brand websites, published articles,
+              Engagement scope and qualitative outcomes: Maruti’s account.
+              Current evidence: linked brand websites, published articles,
               travel-platform listings and Ubersuggest domain overviews. The
               public websites have evolved; they are not archived
               before-and-after snapshots. Google Business Profile edits,

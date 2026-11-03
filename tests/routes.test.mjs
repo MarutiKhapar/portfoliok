@@ -81,14 +81,24 @@ test("hospitality case study separates reported bookings from current search est
     assert.ok(html.includes(`id="${id}"`));
   for (const text of [
     "Ember Castle",
-    "~10–15",
-    "~40–60",
+    "Booking volumes and commercial figures are not disclosed",
+    "Milan Hospitality",
     "October 2026",
     "1,427",
-    "Historical platform exports are unavailable",
+    "Mahaveer Ventures",
   ])
     assert.ok(html.includes(text), text);
   assert.match(html, /href="https:\/\/hoteleden\.in\//);
+  assert.doesNotMatch(html, /~10–15|~40–60|makemytrip\.com|goibibo\.com/);
+  for (const asset of [
+    "hotel-eden-violet.svg",
+    "padival-grand-violet.svg",
+    "coastal-resort.svg",
+    "karwar.svg",
+    "gokarna.svg",
+    "puttur.svg",
+  ])
+    assert.ok(html.includes(asset), asset);
   const home = await fetch(origin).then((r) => r.text());
   assert.match(home, /href="\/work\/hospitality"/);
   const sitemap = await fetch(`${origin}/sitemap.xml`).then((r) => r.text());
