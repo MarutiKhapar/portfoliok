@@ -480,3 +480,10 @@
     min-height: 250px;
   }
 }
+
+/* Compact results and the transition into supporting evidence. */
+.hospitality-study .results-section{padding:48px 0 32px}
+.hospitality-study .results-section .hotel-results-grid{margin-top:24px}
+.hospitality-study .results-section .data-note{margin-top:22px;padding-top:16px}
+.hospitality-study #evidence{padding-top:46px}
+@media(max-width:520px){.hospitality-study .results-section{padding:34px 0 24px}.hospitality-study #evidence{padding-top:34px}}

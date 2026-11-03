@@ -428,7 +428,7 @@ export default function Hospitality() {
                 <div className="ota-chips">
                   <span>MakeMyTrip</span>
                   <span>Goibibo</span>
-                  <span>Other domestic OTAs</span>
+                  <span>Yatra</span><span>Cleartrip</span><span>EaseMyTrip</span><span>ixigo</span><span>Booking.com</span><span>Agoda</span>
                 </div>
               </div>
               <div className="ota-market">
@@ -579,7 +579,6 @@ export default function Hospitality() {
             </p>
             <Out href="https://hoteleden.in/">Éden website</Out>
             <Out href="https://thepadivalgrand.com/">Padival website</Out>
-            <Out href="https://app.neilpatel.com/">Ubersuggest</Out>
           </div>
         </section>
         <section className="case-cta">
