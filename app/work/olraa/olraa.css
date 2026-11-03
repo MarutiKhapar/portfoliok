@@ -16,3 +16,31 @@
 .case-study h1{font-weight:900;letter-spacing:-.045em}.case-study h2,.case-study h3,.case-study h4{font-weight:800}.case-study em{font-family:Outfit,sans-serif;font-style:normal;font-weight:800;background:var(--gradient);color:transparent!important;background-clip:text;-webkit-background-clip:text}.case-study .case-button{background:var(--gradient);border-radius:9px;font-weight:800}.case-study .case-header{background:#ffffffdf}.case-study .header-inner{height:84px}.case-study .signature{font-family:Outfit,sans-serif;font-size:25px;font-weight:800}.case-study .signature small{display:none}.case-study .monogram{font-family:Outfit,sans-serif;font-style:normal;font-weight:900;font-size:30px;letter-spacing:-5px;background:var(--gradient);color:transparent;background-clip:text;-webkit-background-clip:text}.case-study .case-header nav{gap:30px;font-size:14px;font-weight:700}.case-study .header-contact{border:0;background:var(--gradient);color:#fff;padding:12px 22px;border-radius:9px}.case-study .catalogue-figure,.case-study .campaign-figure{transform:none;border-radius:16px}.case-study .architecture-figure,.case-study .article-example,.case-study .team-lead,.case-study .team-branches>div,.case-study .result-panel{border-radius:16px;box-shadow:0 10px 28px #4a2d7109}.case-study .olraa-wordmark,.case-study .catalogue-tagline{font-family:Outfit,sans-serif;font-weight:800}.case-study .campaign-section{background:linear-gradient(115deg,#f4e4ff,#fff1e9);color:#20265b}.case-study .campaign-layout>div>p:last-of-type,.case-study .campaign-section .eyebrow{color:#626a90}.case-study .channel-list span{border-color:#d7c7ef;color:#626a90;background:#ffffff80;border-radius:24px}.case-study .campaign-section h2 em{color:transparent}.case-study .case-cta{background:linear-gradient(115deg,#f4e4ff,#fff1e9)}.case-study .result-bar.last{background:var(--gradient)}.case-study .case-jump{background:#ffffffed}.case-study .chart-switch button[aria-pressed=true]{background:var(--gradient)}
 @media(max-width:800px){.case-study .signature{font-size:20px}.case-study .case-header nav{gap:15px;font-size:11px}.case-study .header-inner{height:72px}}
 @media(max-width:520px){.case-study .signature{font-size:16px;gap:10px}.case-study .header-contact{padding:10px 12px}.case-study .case-header nav{gap:12px;font-size:10px}.case-study .monogram{font-size:27px}}
+
+/* Compact case-study details and accessible category illustrations. */
+.case-study .case-icon{width:25px;height:25px;flex:none;color:#a949f9;vertical-align:middle}
+.case-study .category-mark{display:flex;align-items:center}
+.case-study .project-facts{align-content:start;align-items:start;gap:24px}
+.case-study .project-facts dt{display:flex;align-items:center;gap:9px;min-height:28px}
+.case-study .project-facts dt .case-icon{width:22px;height:22px}
+.case-study .role-line p{max-width:460px;line-height:1.8}
+.case-study .challenge-summary{margin-top:28px;padding:22px 25px;background:#f5efff;border-radius:14px}
+.case-study .challenge-summary>p:nth-child(2){font-size:22px;line-height:1.45;margin:10px 0 16px}
+.case-study .challenge-summary>div{display:flex;gap:10px;flex-wrap:wrap}
+.case-study .challenge-summary>div>span{font-size:10px;padding:6px 10px;background:#fff;border-radius:20px;color:var(--muted)}
+.case-study .technical-depth{margin-top:35px}
+.case-study .technical-depth .subsection-head{margin-top:0}
+.case-study .technical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:22px 0}
+.case-study .technical-grid article{padding:22px;border:1px solid var(--line);border-radius:14px;background:#ffffff90}
+.case-study .technical-grid h4{font-size:17px;margin-bottom:10px}
+.case-study .technical-grid p{font-size:12px;line-height:1.8;color:var(--muted)}
+.case-study .campaign-section{padding:40px 0}
+.case-study .campaign-layout{grid-template-columns:1.1fr 1fr;gap:38px;align-items:start}
+.case-study .campaign-section h2{font-size:clamp(32px,3.8vw,48px);margin:16px 0;line-height:1.12}
+.case-study .campaign-figure{padding:25px}
+.case-study .campaign-offer{margin:15px 0}
+.case-study .campaign-offer>strong{font-size:88px}
+.case-study .campaign-calendar>div{padding:10px 0}
+.case-study .campaign-figure figcaption{margin-top:12px}
+@media(max-width:800px){.case-study .technical-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.case-study .campaign-layout{grid-template-columns:1fr;gap:24px}.case-study .campaign-figure{max-width:none}.case-study .campaign-section{padding:35px 0}}
+@media(max-width:520px){.case-study .technical-grid{grid-template-columns:1fr}.case-study .challenge-summary{padding:18px}.case-study .challenge-summary>p:nth-child(2){font-size:19px}.case-study .project-facts{gap:20px 14px}.case-study .project-facts dt{font-size:6px;letter-spacing:.7px;gap:6px}.case-study .campaign-section h2{font-size:34px}}
