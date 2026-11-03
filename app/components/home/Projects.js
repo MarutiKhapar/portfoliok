@@ -153,7 +153,9 @@ export default function Projects() {
             <div className="project-top"><span className="eyetag">Shipping &amp; Logistics · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
             <h3>Velocity Express, The Atlantic International &amp; Unique Express</h3><p>SEO across shipping and logistics brands, covering technical foundations, keyword strategy, on-page optimisation and internal linking, with programmatic landing-page work for Unique Express.</p>
             <div className="project-bottom"><strong>Technical &amp; programmatic SEO</strong><div className="project-links">
-              <a href="https://uniqueexpress.net" target="_blank" rel="noopener noreferrer">Unique Express <span aria-hidden="true">↗</span></a>
+              <a href="https://velexp.com/" target="_blank" rel="noopener noreferrer">Velocity Express <span aria-hidden="true">↗</span></a>
+<a href="https://atlanticcourier.net/" target="_blank" rel="noopener noreferrer">The Atlantic International <span aria-hidden="true">↗</span></a>
+<a href="https://uniqueexpress.net" target="_blank" rel="noopener noreferrer">Unique Express <span aria-hidden="true">↗</span></a>
             </div></div>
           </article>
           <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
