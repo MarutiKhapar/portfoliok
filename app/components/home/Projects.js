@@ -149,99 +149,27 @@ export default function Projects() {
               </div>
             </div>
           </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"Programmatic SEO"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>{"Unique Express"}</h3>
-            <p>
-              {
-                "Programmatic search landing-page initiative focused on repeatable page structures and scalable organic discovery."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"Programmatic SEO"}</strong>
-              <div className="project-links">
-                <a
-                  href="https://uniqueexpress.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"uniqueexpress.net "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-              </div>
-            </div>
+          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
+            <div className="project-top"><span className="eyetag">Shipping &amp; Logistics · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
+            <h3>Velocity Express, The Atlantic International &amp; Unique Express</h3><p>SEO across shipping and logistics brands, covering technical foundations, keyword strategy, on-page optimisation and internal linking, with programmatic landing-page work for Unique Express.</p>
+            <div className="project-bottom"><strong>Technical &amp; programmatic SEO</strong><div className="project-links">
+              <a href="https://uniqueexpress.net" target="_blank" rel="noopener noreferrer">Unique Express <span aria-hidden="true">↗</span></a>
+            </div></div>
           </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"End-to-end SEO"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>{"Velocity Express & Atlantic Express"}</h3>
-            <p>
-              {
-                "Full-service SEO across technical foundations, keyword strategy, on-page optimisation, internal links and measurement."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"Full-service search ownership"}</strong>
-              <div className="project-links"></div>
-            </div>
+          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
+            <div className="project-top"><span className="eyetag">Healthcare · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
+            <h3>One Dental</h3><p>End-to-end SEO for a dental healthcare website, tailored to treatment-related searches and local service demand.</p>
+            <div className="project-bottom"><strong>Healthcare search strategy</strong><div className="project-links">
+              <a href="https://onedentall.com" target="_blank" rel="noopener noreferrer">One Dental <span aria-hidden="true">↗</span></a>
+            </div></div>
           </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"Healthcare & Hospitality SEO"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>{"One Dental, Hotel Eden & The Padival Grand"}</h3>
-            <p>
-              {
-                "End-to-end SEO across dental healthcare and hotel/hospitality websites, tailored to service demand and local search intent."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"Multi-industry search execution"}</strong>
-              <div className="project-links">
-                <a
-                  href="https://onedentall.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"One Dental "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-                <a
-                  href="https://hoteleden.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"Hotel Eden "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-                <a
-                  href="https://thepadivalgrand.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"Padival Grand "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-              </div>
-            </div>
+          <article className="project" data-cat="seo" hidden={filter !== "all" && filter !== "seo"}>
+            <div className="project-top"><span className="eyetag">Hospitality · SEO</span><span className="pr-icon" aria-hidden="true">⌕</span></div>
+            <h3>Hotel Eden &amp; The Padival Grand</h3><p>SEO for two hospitality websites, aligning technical foundations and on-page content with hotel-related searches and local discovery.</p>
+            <div className="project-bottom"><strong>Hospitality search strategy</strong><div className="project-links">
+              <a href="https://hoteleden.com" target="_blank" rel="noopener noreferrer">Hotel Eden <span aria-hidden="true">↗</span></a>
+<a href="https://thepadivalgrand.com" target="_blank" rel="noopener noreferrer">The Padival Grand <span aria-hidden="true">↗</span></a>
+            </div></div>
           </article>
           <article
             className="project"
