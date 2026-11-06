@@ -224,6 +224,21 @@ export default function Projects() {
           </article>
           <article
             className="project"
+            data-cat="full"
+            hidden={filter !== "all" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Gold Retail &amp; Jewellery Sector (B2C)</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>MG Jewellers &amp; Swayambhu Gold Pvt Ltd</h3>
+            <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
+            <div className="project-bottom">
+              <strong>B2C jewellery marketing</strong>
+            </div>
+          </article>
+          <article
+            className="project"
             data-cat="seo"
             hidden={filter !== "all" && filter !== "seo"}
           >
@@ -391,21 +406,6 @@ export default function Projects() {
                   DND Glassy website <span aria-hidden="true">↗</span>
                 </a>
               </div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="full"
-            hidden={filter !== "all" && filter !== "full"}
-          >
-            <div className="project-top">
-              <span className="eyetag">Gold Retail &amp; Jewellery Sector (B2C)</span>
-              <span className="pr-icon" aria-hidden="true">✳</span>
-            </div>
-            <h3>MG Jewellers &amp; Swayambhu Gold Pvt Ltd</h3>
-            <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
-            <div className="project-bottom">
-              <strong>B2C jewellery marketing</strong>
             </div>
           </article>
           <article
