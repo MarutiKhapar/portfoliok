@@ -1,5 +1,18 @@
 import { homeFaqs, pageDetails, personId, siteUrl } from "../lib/seo";
 
+const india = { "@type": "Country", name: "India" };
+
+const caseTopics = {
+  olraa: ["Ecommerce SEO", "International SEO", "Product catalogue indexing"],
+  hospitality: ["Hotel digital marketing", "Local SEO", "Hotel booking distribution"],
+  goldRetail: ["Jewellery marketing", "Seasonal campaigns", "Showroom marketing"],
+};
+
+const caseLocations = {
+  hospitality: ["Karwar", "Gokarna", "Puttur"],
+  goldRetail: ["Belagavi"],
+};
+
 export function JsonLd({ id, data }) {
   return (
     <script
@@ -24,7 +37,8 @@ export function SiteSchema() {
             "@id": personId,
             name: "Maruti Khapare",
             url: `${siteUrl}/`,
-            description: "SEO, paid media and growth marketing professional.",
+            description: "SEO consultant and growth marketer working across search, paid media and analytics.",
+            jobTitle: "SEO Consultant and Growth Marketer",
             sameAs: [
               "https://www.linkedin.com/in/maruti-khapare/",
               "https://www.behance.net/NovaNest",
@@ -37,6 +51,15 @@ export function SiteSchema() {
               "Paid media",
               "Web analytics",
             ],
+          },
+          {
+            "@type": "Service",
+            "@id": `${siteUrl}/#seo-consulting`,
+            name: "SEO and growth marketing consulting",
+            serviceType: ["SEO consulting", "Growth marketing"],
+            provider: { "@id": personId },
+            areaServed: india,
+            url: `${siteUrl}/#services`,
           },
           {
             "@type": "WebSite",
@@ -101,6 +124,14 @@ export default function PageSchema({ pageKey }) {
       inLanguage: "en",
       articleSection: "Case studies",
       keywords: page.keywords,
+      about: caseTopics[pageKey].map((name) => ({ "@type": "Thing", name })),
+      ...(caseLocations[pageKey] && {
+        spatialCoverage: caseLocations[pageKey].map((name) => ({
+          "@type": "Place",
+          name,
+          containedInPlace: { "@type": "AdministrativeArea", name: "Karnataka", containedInPlace: india },
+        })),
+      }),
     });
     graph.push({
       "@type": "BreadcrumbList",
