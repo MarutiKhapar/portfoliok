@@ -405,10 +405,9 @@ export default function Projects() {
             <h3>MG Jewellers &amp; Swayambhu Gold Pvt Ltd</h3>
             <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
             <div className="project-bottom">
-              <strong>B2C jewellery marketing</strong>
-              <div className="project-links">
-                <a href="/work/b2c/goldandretail">Read case study <span aria-hidden="true">↗</span></a>
-              </div>
+              <strong>
+                <a href="/work/b2c/goldandretail">B2C jewellery marketing <span aria-hidden="true">↗</span></a>
+              </strong>
             </div>
           </article>
           <article
