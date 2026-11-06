@@ -224,6 +224,27 @@ export default function Projects() {
           </article>
           <article
             className="project"
+            data-cat="full"
+            hidden={filter !== "all" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Gold Retail &amp; Jewellery Sector (B2C)</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>MG Jewellers &amp; Swayambhu Gold Pvt Ltd</h3>
+            <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
+            <div className="project-bottom">
+              <strong>
+                <a href="/work/b2c/goldandretail">Gold industry case study <span aria-hidden="true">↗</span></a>
+              </strong>
+              <div className="project-links">
+                <a href="https://mgjewellers.co.in/" target="_blank" rel="noopener noreferrer">MG Jewellers website <span aria-hidden="true">↗</span></a>
+                <a href="https://www.swayambhugold.com/" target="_blank" rel="noopener noreferrer">Swayambhu Gold website <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+          <article
+            className="project"
             data-cat="seo"
             hidden={filter !== "all" && filter !== "seo"}
           >
@@ -390,27 +411,6 @@ export default function Projects() {
                 <a href="https://www.glassyy.com/" target="_blank" rel="noopener noreferrer">
                   DND Glassy website <span aria-hidden="true">↗</span>
                 </a>
-              </div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="full"
-            hidden={filter !== "all" && filter !== "full"}
-          >
-            <div className="project-top">
-              <span className="eyetag">Gold Retail &amp; Jewellery Sector (B2C)</span>
-              <span className="pr-icon" aria-hidden="true">✳</span>
-            </div>
-            <h3>MG Jewellers &amp; Swayambhu Gold Pvt Ltd</h3>
-            <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
-            <div className="project-bottom">
-              <strong>
-                <a href="/work/b2c/goldandretail">Gold industry case study <span aria-hidden="true">↗</span></a>
-              </strong>
-              <div className="project-links">
-                <a href="https://mgjewellers.co.in/" target="_blank" rel="noopener noreferrer">MG Jewellers website <span aria-hidden="true">↗</span></a>
-                <a href="https://www.swayambhugold.com/" target="_blank" rel="noopener noreferrer">Swayambhu Gold website <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </article>
