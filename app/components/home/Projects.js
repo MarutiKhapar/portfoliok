@@ -386,6 +386,11 @@ export default function Projects() {
             <p>Growth support across brand positioning, channel strategy and digital execution.</p>
             <div className="project-bottom">
               <strong>Multi-channel growth support</strong>
+              <div className="project-links">
+                <a href="https://www.glassyy.com/" target="_blank" rel="noopener noreferrer">
+                  DND Glassy website <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </article>
           <article
@@ -417,7 +422,7 @@ export default function Projects() {
             <div className="project-bottom">
               <div className="project-links">
                 <a href="https://spoco.org/" target="_blank" rel="noopener noreferrer">
-                  SPOCO website <span aria-hidden="true">↗</span>
+                  SPOCO &amp; Sparda Degree College website <span aria-hidden="true">↗</span>
                 </a>
                 <a href="https://www.akashinstitutions.in/" target="_blank" rel="noopener noreferrer">
                   Akash Educational Institutions website <span aria-hidden="true">↗</span>
