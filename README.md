@@ -1,5 +1,7 @@
 # Maruti Khapare — portfolio
 
+[View the live portfolio and case studies](https://maruti-khapare.vercel.app/#work)
+
 A Next.js App Router portfolio built with React, with an OLRAA case study and a server-side Google Calendar booking endpoint.
 
 ## Develop
