@@ -4,23 +4,23 @@ export const personId = `${siteUrl}/#person`;
 export const pageDetails = {
   home: {
     path: "/",
-    title: "Maruti Khapare | SEO & Growth Marketing Portfolio",
+    title: "Maruti Khapare | SEO Consultant & Growth Marketing Portfolio",
     description:
-      "Explore Maruti Khapare’s SEO and growth marketing portfolio: ecommerce SEO, hotel digital marketing, paid media and conversion-focused case studies.",
+      "Explore Maruti Khapare’s work as an SEO consultant and growth marketer, with case studies in ecommerce SEO, hotel marketing and jewellery retail.",
     keywords: [
       "SEO portfolio",
       "growth marketing",
-      "SEO expert",
+      "SEO consultant",
       "performance marketing",
     ],
     image: "/opengraph-image",
-    modified: "2026-11-03T10:10:23Z",
+    modified: "2026-11-06",
   },
   olraa: {
     path: "/work/olraa",
     title: "Ecommerce SEO Case Study: OLRAA | Maruti Khapare",
     description:
-      "An ecommerce SEO case study covering OLRAA’s catalogue architecture, international targeting, indexing, search intent and seasonal marketing strategy.",
+      "See how OLRAA approached ecommerce SEO across catalogue structure, international targeting, product indexing, search intent and seasonal campaigns.",
     keywords: [
       "ecommerce SEO case study",
       "international SEO",
@@ -28,14 +28,14 @@ export const pageDetails = {
       "content strategy",
     ],
     image: "/olraa-social.png",
-    modified: "2026-11-03T10:10:23Z",
+    modified: "2026-11-06",
     headline: "From catalogue complexity to search discovery",
   },
   hospitality: {
     path: "/work/hospitality",
     title: "Hotel Digital Marketing Case Study | Maruti Khapare",
     description:
-      "Hotel digital marketing for Eden, Ember Castle and The Padival Grand: building visibility through SEO, Google profiles, OTAs, content and social media.",
+      "See how Hotel Eden, Ember Castle and The Padival Grand used hotel SEO, Google Business Profiles, OTA listings and social campaigns to support discovery.",
     keywords: [
       "hotel digital marketing",
       "hospitality marketing case study",
@@ -43,8 +43,18 @@ export const pageDetails = {
       "OTA distribution",
     ],
     image: "/work/hospitality/opengraph-image",
-    modified: "2026-11-03T10:10:23Z",
+    modified: "2026-11-06",
     headline: "Known offline. Discoverable online.",
+  },
+  goldRetail: {
+    path: "/work/b2c/goldandretail",
+    title: "Jewellery Marketing Case Study | MG Jewellers & Swayambhu Gold",
+    description:
+      "See how MG Jewellers and Swayambhu Gold connected festive ads, influencer videos and village outreach with showroom visits in Belagavi.",
+    keywords: ["jewellery marketing", "gold retail marketing", "jewellery marketing case study"],
+    image: "/opengraph-image",
+    modified: "2026-11-06",
+    headline: "From local awareness to showroom visits.",
   },
 };
 
