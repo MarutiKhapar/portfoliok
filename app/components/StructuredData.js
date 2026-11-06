@@ -110,11 +110,7 @@ export default function PageSchema({ pageKey }) {
         {
           "@type": "ListItem",
           position: 2,
-          name: profile
-            ? page.title
-            : pageKey === "olraa"
-              ? "OLRAA case study"
-              : "Hotel Industry case study",
+          name: page.headline,
           item: url,
         },
       ],
