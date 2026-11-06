@@ -76,35 +76,6 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "seo"}
           >
             <div className="project-top">
-              <span className="eyetag">{"GEO & Funnel Content"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>{"TMITS"}</h3>
-            <p>
-              {
-                "Geography-based content testing and structured TOFU, MOFU and BOFU segmentation to map search intent to funnel stage."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"Geo + intent segmentation"}</strong>
-              <div className="project-links">
-                <a
-                  href="https://tmits.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"tmits.in "}
-                  <span aria-hidden="true">{"↗"}</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
               <span className="eyetag">Shipping &amp; Logistics · SEO</span>
               <span className="pr-icon" aria-hidden="true">
                 ⌕
@@ -141,6 +112,35 @@ export default function Projects() {
                   rel="noopener noreferrer"
                 >
                   Unique Express <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article
+            className="project"
+            data-cat="seo"
+            hidden={filter !== "all" && filter !== "seo"}
+          >
+            <div className="project-top">
+              <span className="eyetag">{"GEO & Funnel Content"}</span>
+              <span className="pr-icon">{"⌕"}</span>
+            </div>
+            <h3>{"TMITS"}</h3>
+            <p>
+              {
+                "Geography-based content testing and structured TOFU, MOFU and BOFU segmentation to map search intent to funnel stage."
+              }
+            </p>
+            <div className="project-bottom">
+              <strong>{"Geo + intent segmentation"}</strong>
+              <div className="project-links">
+                <a
+                  href="https://tmits.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {"tmits.in "}
+                  <span aria-hidden="true">{"↗"}</span>
                 </a>
               </div>
             </div>
