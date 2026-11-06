@@ -408,6 +408,10 @@ export default function Projects() {
               <strong>
                 <a href="/work/b2c/goldandretail">Gold industry case study <span aria-hidden="true">↗</span></a>
               </strong>
+              <div className="project-links">
+                <a href="https://mgjewellers.co.in/" target="_blank" rel="noopener noreferrer">MG Jewellers website <span aria-hidden="true">↗</span></a>
+                <a href="https://www.swayambhugold.com/" target="_blank" rel="noopener noreferrer">Swayambhu Gold website <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
           </article>
           <article
