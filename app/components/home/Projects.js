@@ -406,7 +406,7 @@ export default function Projects() {
             <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
             <div className="project-bottom">
               <strong>
-                <a href="/work/b2c/goldandretail">B2C jewellery marketing <span aria-hidden="true">↗</span></a>
+                <a href="/work/b2c/goldandretail">Gold industry case study <span aria-hidden="true">↗</span></a>
               </strong>
             </div>
           </article>
