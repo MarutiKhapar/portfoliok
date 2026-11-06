@@ -197,6 +197,7 @@ export default function Olraa() {
                   <em>search discovery.</em>
                 </h1>
                 <p className="hero-description">
+                  Ecommerce SEO case study.
                   Connecting technical SEO, catalogue structure and buying
                   intent to help a global Indian-products marketplace earn
                   search visibility.
