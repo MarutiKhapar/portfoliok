@@ -1,3 +1,5 @@
+import PageSchema from "../../../components/StructuredData";
+import { pageMetadata } from "../../../lib/seo";
 import "../../olraa/olraa.css";
 import styles from "./case-study.module.css";
 
@@ -9,14 +11,12 @@ const sections = [
   ["evidence", "Creative work"],
 ];
 
-export const metadata = {
-  title: "MG Jewellers & Swayambhu Gold | Retail Marketing Case Study",
-  description: "How Maruti Khapare connected jewellery campaigns and village outreach with showroom visits in Belagavi.",
-};
+export const metadata = pageMetadata("goldRetail");
 
 export default function GoldAndRetailCaseStudy() {
   return (
     <div className={`case-study ${styles.study}`} id="top">
+      <PageSchema pageKey="goldRetail" />
       <a className="skip-link" href="#main-content">Skip to case study</a>
       <header className="case-header">
         <div className="case-wrap header-inner">
@@ -32,7 +32,7 @@ export default function GoldAndRetailCaseStudy() {
               <div>
                 <p className="eyebrow">MG JEWELLERS &amp; SWAYAMBHU GOLD · BELAGAVI</p>
                 <h1>From local awareness to <em>showroom visits.</em></h1>
-                <p className="hero-description">How two jewellery brands connected festive advertising, local creators and village outreach with reasons to visit a showroom.</p>
+                <p className="hero-description">A jewellery marketing case study on how MG Jewellers and Swayambhu Gold connected festive advertising, local creators and village outreach with showroom visits.</p>
                 <div className="role-line"><span>MY ROLE</span><p>Marketing Manager for both brands, responsible for digital and offline marketing.</p></div>
                 <div className="hero-actions"><a className="case-button" href="#online">Explore the strategy ↓</a></div>
               </div>
