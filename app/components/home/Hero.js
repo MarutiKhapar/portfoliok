@@ -13,7 +13,7 @@ export default function Hero() {
           </h1>
           <p className="lead">
             {
-              "I’m Maruti Khapare. I connect search, paid media, analytics and customer journeys to build scalable acquisition systems and measurable business outcomes."
+              "I’m Maruti Khapare, an SEO consultant and growth marketer. I connect search, paid media, analytics and customer journeys to build scalable acquisition systems and measurable business outcomes."
             }
           </p>
           <div className="cta-row">

@@ -1,0 +1,30 @@
+.study h1 em { white-space: normal; }
+
+.cover {
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background: linear-gradient(145deg, #f4e4ff, #fff1e9);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.cover > span { color: var(--ink); letter-spacing: .15em; font-size: .75rem; }
+.cover ol { margin: 1.5rem 0; padding-left: 1.4em; font: 500 clamp(1.25rem, 3vw, 2.1rem)/1.35 Outfit, sans-serif; }
+.cover li { padding-block: .45em; border-bottom: 1px solid var(--line); }
+.cover figcaption { font-size: .85rem; color: var(--muted); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cards article { padding: 1.5rem; background: white; border: 1px solid var(--line); border-radius: 14px; }
+.cards h3 { margin-bottom: .5rem; font-size: 1.25rem; }
+.cards p { color: var(--muted); }
+
+
+.notes { margin-top: 2rem; max-width: 60rem; }
+.notes > p { color: var(--muted); margin-top: .5rem; }
+.video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; margin-block: 1rem; }

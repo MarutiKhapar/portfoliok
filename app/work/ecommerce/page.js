@@ -1,6 +1,6 @@
 import PageSchema from "../../components/StructuredData";
 import { pageMetadata } from "../../lib/seo";
-import "./olraa.css";
+import "../olraa/olraa.css";
 
 const site = "https://olraa.com";
 export const metadata = pageMetadata("olraa");
@@ -197,6 +197,7 @@ export default function Olraa() {
                   <em>search discovery.</em>
                 </h1>
                 <p className="hero-description">
+                  Ecommerce SEO case study.
                   Connecting technical SEO, catalogue structure and buying
                   intent to help a global Indian-products marketplace earn
                   search visibility.

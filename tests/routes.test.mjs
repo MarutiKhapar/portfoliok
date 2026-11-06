@@ -4,12 +4,12 @@ import assert from "node:assert/strict";
 const origin = process.env.TEST_ORIGIN || "http://localhost:3005";
 
 test("case study is indexable, linked and contains its substantive sections", async () => {
-  const response = await fetch(`${origin}/work/olraa`);
+  const response = await fetch(`${origin}/work/ecommerce`);
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(
     html,
-    /rel="canonical" href="https:\/\/maruti-khapare\.vercel\.app\/work\/olraa"/,
+    /rel="canonical" href="https:\/\/maruti-khapare\.vercel\.app\/work\/ecommerce"/,
   );
   for (const id of [
     "overview",
@@ -35,7 +35,7 @@ test("homepage retains projects, navigation, chatbot and booking controls after 
   const response = await fetch(origin);
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /href="\/work\/olraa"/);
+  assert.match(html, /href="\/work\/ecommerce"/);
   for (const id of ["menu", "projects", "chatbotToggle", "chatForm"])
     assert.ok(html.includes(`id="${id}"`), id);
   assert.match(html, /data-open-booking/);
@@ -51,7 +51,8 @@ test("homepage retains projects, navigation, chatbot and booking controls after 
 test("old entry links redirect to their Next.js pages", async () => {
   for (const [route, target] of [
     ["/index.html", "/"],
-    ["/olraa", "/work/olraa"],
+    ["/olraa", "/work/ecommerce"],
+    ["/work/olraa", "/work/ecommerce"],
   ]) {
     const response = await fetch(`${origin}${route}`, { redirect: "manual" });
     assert.equal(response.status, 308);
@@ -72,7 +73,7 @@ test("missing pages return a real 404", async () => {
 test("every public page includes canonical metadata, valid JSON-LD and site-wide tracking", async () => {
   for (const [path, expectedType] of [
     ["/", "ProfilePage"],
-    ["/work/olraa", "Article"],
+    ["/work/ecommerce", "Article"],
     ["/work/hospitality", "Article"],
   ]) {
     const response = await fetch(origin + path);
@@ -122,7 +123,7 @@ test("generated social previews are valid PNG images", async () => {
 });
 
 test("removed editorial notes do not reappear on the published pages", async () => {
-  const olraa = await fetch(origin + "/work/olraa").then((response) =>
+  const olraa = await fetch(origin + "/work/ecommerce").then((response) =>
     response.text(),
   );
   assert.doesNotMatch(

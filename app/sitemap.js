@@ -1,23 +1,10 @@
-// Include canonical, indexable pages only. Update lastModified after meaningful page edits.
+import { pageDetails, siteUrl } from "./lib/seo";
+
 export default function sitemap() {
-  return [
-    {
-      url: "https://maruti-khapare.vercel.app/",
-      lastModified: "2026-11-03T10:10:23Z",
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: "https://maruti-khapare.vercel.app/work/olraa",
-      lastModified: "2026-11-03T10:10:23Z",
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://maruti-khapare.vercel.app/work/hospitality",
-      lastModified: "2026-11-03T10:10:23Z",
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  return Object.values(pageDetails).map(({ path, modified }) => ({
+    url: siteUrl + path,
+    lastModified: modified,
+    changeFrequency: "monthly",
+    priority: path === "/" ? 1 : 0.8,
+  }));
 }
