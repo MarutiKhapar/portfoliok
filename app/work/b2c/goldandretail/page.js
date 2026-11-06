@@ -4,8 +4,8 @@ import styles from "./case-study.module.css";
 const gallery = "https://www.behance.net/gallery/221384359/MG-Jewellers-Challenging-the-Gold-Standard";
 const sections = [
   ["challenge", "Challenge"],
-  ["strategy", "Strategy"],
-  ["execution", "Execution"],
+  ["online", "Online marketing"],
+  ["offline", "Offline marketing"],
   ["evidence", "Creative work"],
 ];
 
@@ -34,7 +34,7 @@ export default function GoldAndRetailCaseStudy() {
                 <h1>From local awareness to <em>showroom visits.</em></h1>
                 <p className="hero-description">How two jewellery brands connected festive advertising, local creators and village outreach with reasons to visit a showroom.</p>
                 <div className="role-line"><span>MY ROLE</span><p>Marketing Manager for both brands, responsible for digital and offline marketing.</p></div>
-                <div className="hero-actions"><a className="case-button" href="#strategy">Explore the strategy ↓</a></div>
+                <div className="hero-actions"><a className="case-button" href="#online">Explore the strategy ↓</a></div>
               </div>
               <figure className={styles.cover}>
                 <span>CAMPAIGN JOURNEY</span>
@@ -60,9 +60,9 @@ export default function GoldAndRetailCaseStudy() {
             </dl>
           </div>
         </section>
-        <section id="strategy" className="strategy-section">
+        <section id="online" className="strategy-section">
           <div className="case-wrap">
-            <p className="eyebrow">02 · CAMPAIGN STRATEGY</p>
+            <p className="eyebrow">02 · ONLINE MARKETING</p>
             <h2>Stay visible between festivals.</h2>
             <p className="section-lead">Ongoing awareness ads kept the brands in view. The seasonal calendar gave the team a reason to plan new creative, shoots and collaborations.</p>
             <div className={styles.cards}>
@@ -71,9 +71,38 @@ export default function GoldAndRetailCaseStudy() {
               <article><h3>Year-round awareness</h3><p>Video shoots, video ads, influencer collaborations and both brand websites.</p></article>
             </div>
           </div>
+          <div className="case-wrap">
+            <div className={styles.notes}>
+              <h3>What shoppers need before they visit</h3>
+              <p>Jewellery shoppers often check local store details, reviews, craftsmanship and hallmarking before making a trip. These are useful content themes for jewellery retailers. Our campaign work focused on brand websites, visual creative, seasonal offers and ongoing awareness.</p>
+            </div>
+            <div className={styles.notes}>
+              <h3>Videos I made from scratch</h3>
+              <p>I handled direction, production and editing myself for both featured videos.</p>
+              <div className={styles.cards}>
+                {[
+                  ["AoKD6dVVUBo", "Diwali 2024 offers and new collection"],
+                  ["Nm0SDvnW6w0", "Featured MG Jewellers campaign video"],
+                ].map(([id, title]) => (
+                  <article key={id}>
+                    <h4>{title}</h4>
+                    <iframe
+                      className={styles.video}
+                      src={`https://www.youtube-nocookie.com/embed/${id}`}
+                      title={title}
+                      loading="lazy"
+                      allow="encrypted-media; picture-in-picture"
+                      allowFullScreen
+                    />
+                    <a className="underlined-link" href={`https://www.youtube.com/watch?v=${id}`}>Watch on YouTube ↗</a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
-        <section id="execution" className="case-section case-wrap">
-          <p className="eyebrow">03 · ON THE GROUND</p>
+        <section id="offline" className="case-section case-wrap">
+          <p className="eyebrow">03 · OFFLINE MARKETING</p>
           <h2>Connect village events with the showroom.</h2>
           <p className="section-lead">Our team visited villages and organised games and community activities. We handed out coupons and discount cards that families could use at the showroom, giving people a practical reason to follow up after the event.</p>
           <div className={styles.cards}>
@@ -89,6 +118,9 @@ export default function GoldAndRetailCaseStudy() {
               <a href={gallery}><span>01</span> MG Jewellers: Challenging the Gold Standard <span aria-hidden="true">↗</span></a>
               <a href="https://mgjewellers.co.in/"><span>02</span> MG Jewellers website <span aria-hidden="true">↗</span></a>
               <a href="https://www.swayambhugold.com/"><span>03</span> Swayambhu Gold website <span aria-hidden="true">↗</span></a>
+              <a href="https://www.instagram.com/shrimahaganapati/"><span>04</span> Instagram <span aria-hidden="true">↗</span></a>
+              <a href="https://www.facebook.com/Shrimahaganapatijewellers/"><span>05</span> Facebook <span aria-hidden="true">↗</span></a>
+              <a href="https://www.youtube.com/@vinayakpattar6794"><span>06</span> YouTube channel <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>
