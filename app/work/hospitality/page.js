@@ -149,7 +149,7 @@ export default function Hospitality() {
                   <em>Discoverable online.</em>
                 </h1>
                 <p className="hero-description">
-                  Building digital visibility and booking channels for
+                  Hotel digital marketing to build visibility and booking channels for
                   established hospitality brands: Éden in Karwar and Gokarna,
                   and The Padival Grand in Puttur.
                 </p>
