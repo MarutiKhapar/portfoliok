@@ -122,6 +122,51 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "seo"}
           >
             <div className="project-top">
+              <span className="eyetag">Hospitality · 360° Digital Growth</span>
+              <span className="pr-icon" aria-hidden="true">
+                ⌕
+              </span>
+            </div>
+            <h3>
+              <a href="/work/hospitality">
+                  Hotels &amp; Hospitality
+              </a>
+            </h3>
+            <p>
+              Building online visibility for established offline brands: Hotel
+              Éden in Karwar and Ember Castle in Gokarna, plus The Padival Grand
+              in Puttur. Branding, local discovery, SEO, OTAs, social and
+              creator collaborations.
+            </p>
+            <div className="project-bottom">
+              <strong>Website &amp; OTA booking channels</strong>
+              <div className="project-links">
+                <a
+                  href="https://hoteleden.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Éden &amp; Ember Castle <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href="https://thepadivalgrand.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Padival Grand <span aria-hidden="true">↗</span>
+                </a>
+                <a href="/work/hospitality">
+                  Read case study <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article
+            className="project"
+            data-cat="seo"
+            hidden={filter !== "all" && filter !== "seo"}
+          >
+            <div className="project-top">
               <span className="eyetag">{"Agency SEO"}</span>
               <span className="pr-icon">{"⌕"}</span>
             </div>
@@ -178,51 +223,6 @@ export default function Projects() {
                   rel="noopener noreferrer"
                 >
                   One Dental <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">Hospitality · 360° Digital Growth</span>
-              <span className="pr-icon" aria-hidden="true">
-                ⌕
-              </span>
-            </div>
-            <h3>
-              <a href="/work/hospitality">
-                  Hotel Industry
-              </a>
-            </h3>
-            <p>
-              Building online visibility for established offline brands: Hotel
-              Éden in Karwar and Ember Castle in Gokarna, plus The Padival Grand
-              in Puttur. Branding, local discovery, SEO, OTAs, social and
-              creator collaborations.
-            </p>
-            <div className="project-bottom">
-              <strong>Website &amp; OTA booking channels</strong>
-              <div className="project-links">
-                <a
-                  href="https://hoteleden.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Éden &amp; Ember Castle <span aria-hidden="true">↗</span>
-                </a>
-                <a
-                  href="https://thepadivalgrand.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  The Padival Grand <span aria-hidden="true">↗</span>
-                </a>
-                <a href="/work/hospitality">
-                  Read case study <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
@@ -359,18 +359,18 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "full"}
           >
             <div className="project-top">
-              <span className="eyetag">{"Full-funnel Growth"}</span>
-              <span className="pr-icon">{"✳"}</span>
+              <span className="eyetag">Industrial Manufacturing · 360° Growth</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
             </div>
-            <h3>{"Flexpert, Robostem & DND Glassy"}</h3>
-            <p>
-              {
-                "360-degree growth engagements combining positioning, channel strategy and digital execution."
-              }
-            </p>
+            <h3>Flexpert</h3>
+            <p>Growth support for an industrial expansion joint manufacturer, covering positioning, channel strategy and digital execution.</p>
             <div className="project-bottom">
-              <strong>{"Multi-channel growth support"}</strong>
-              <div className="project-links"></div>
+              <strong>Multi-channel growth support</strong>
+              <div className="project-links">
+                <a href="https://www.flexpertbellows.com/" target="_blank" rel="noopener noreferrer">
+                  Flexpert website <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </article>
           <article
@@ -379,22 +379,78 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "full"}
           >
             <div className="project-top">
-              <span className="eyetag">{"Real Estate & Jewellery"}</span>
-              <span className="pr-icon">{"✳"}</span>
+              <span className="eyetag">STEM Education · 360° Growth</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
             </div>
-            <h3>
-              {
-                "Amantran Developers, Property Trade, MG Jewellers & Swayambhu Gold Pvt Ltd"
-              }
-            </h3>
-            <p>
-              {
-                "Broader growth and marketing support across property and retail businesses, aligning discoverability, demand and campaign execution."
-              }
-            </p>
+            <h3>Robostem</h3>
+            <p>Growth support for a STEM and robotics education provider, covering positioning, channel strategy and digital execution.</p>
             <div className="project-bottom">
-              <strong>{"360° marketing engagements"}</strong>
-              <div className="project-links"></div>
+              <strong>Multi-channel growth support</strong>
+              <div className="project-links">
+                <a href="https://robostem.co.in/" target="_blank" rel="noopener noreferrer">
+                  Robostem website <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article
+            className="project"
+            data-cat="full"
+            hidden={filter !== "all" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">360° Digital Growth</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>DND Glassy</h3>
+            <p>Growth support across brand positioning, channel strategy and digital execution.</p>
+            <div className="project-bottom">
+              <strong>Multi-channel growth support</strong>
+            </div>
+          </article>
+          <article
+            className="project"
+            data-cat="full"
+            hidden={filter !== "all" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Real Estate · 360° Growth</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>Amantran Developers</h3>
+            <p>Marketing support for a real estate developer, focused on discoverability, demand and campaign execution.</p>
+            <div className="project-bottom">
+              <strong>Real estate marketing</strong>
+            </div>
+          </article>
+          <article
+            className="project"
+            data-cat="full"
+            hidden={filter !== "all" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Real Estate · 360° Growth</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>Property Trade</h3>
+            <p>Marketing support for a property business, focused on discoverability, demand and campaign execution.</p>
+            <div className="project-bottom">
+              <strong>Property marketing</strong>
+            </div>
+          </article>
+          <article
+            className="project"
+            data-cat="full"
+            hidden={filter !== "all" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Gold Retail &amp; Jewellery Sector (B2C)</span>
+              <span className="pr-icon" aria-hidden="true">✳</span>
+            </div>
+            <h3>MG Jewellers &amp; Swayambhu Gold Pvt Ltd</h3>
+            <p>Consumer marketing for gold and jewellery retail, covering discoverability, demand and campaign execution.</p>
+            <div className="project-bottom">
+              <strong>B2C jewellery marketing</strong>
             </div>
           </article>
         </div>
