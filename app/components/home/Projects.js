@@ -122,17 +122,17 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "seo"}
           >
             <div className="project-top">
-              <span className="eyetag">{"GEO & Funnel Content"}</span>
+              <span className="eyetag">{"Agency SEO"}</span>
               <span className="pr-icon">{"⌕"}</span>
             </div>
-            <h3>{"TMITS"}</h3>
+            <h3>TMITS &amp; Megamind Studios</h3>
             <p>
               {
-                "Geography-based content testing and structured TOFU, MOFU and BOFU segmentation to map search intent to funnel stage."
+                "SEO for two agencies, covering geographic content testing, search intent across funnel stages, service discoverability and site structure."
               }
             </p>
             <div className="project-bottom">
-              <strong>{"Geo + intent segmentation"}</strong>
+              <strong>{"Agency search visibility"}</strong>
               <div className="project-links">
                 <a
                   href="https://tmits.in"
@@ -140,6 +140,14 @@ export default function Projects() {
                   rel="noopener noreferrer"
                 >
                   {"tmits.in "}
+                  <span aria-hidden="true">{"↗"}</span>
+                </a>
+                <a
+                  href="https://megamind.studios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {"megamind.studios "}
                   <span aria-hidden="true">{"↗"}</span>
                 </a>
               </div>
@@ -215,35 +223,6 @@ export default function Projects() {
                 </a>
                 <a href="/work/hospitality">
                   Read case study <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="seo"
-            hidden={filter !== "all" && filter !== "seo"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"Agency SEO"}</span>
-              <span className="pr-icon">{"⌕"}</span>
-            </div>
-            <h3>{"Megamind Studios"}</h3>
-            <p>
-              {
-                "Search strategy for a full-service agency site: service discoverability, site structure and acquisition-oriented content."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"Agency search presence"}</strong>
-              <div className="project-links">
-                <a
-                  href="https://megamind.studios"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {"megamind.studios "}
-                  <span aria-hidden="true">{"↗"}</span>
                 </a>
               </div>
             </div>
