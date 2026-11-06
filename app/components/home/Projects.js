@@ -122,14 +122,14 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "seo"}
           >
             <div className="project-top">
-              <span className="eyetag">Hospitality · 360° Digital Growth</span>
+              <span className="eyetag">Hotels and Hospitality</span>
               <span className="pr-icon" aria-hidden="true">
                 ⌕
               </span>
             </div>
             <h3>
               <a href="/work/hospitality">
-                  Hotels &amp; Hospitality
+                  Hotel Eden Karwar, Ember Castle by Eden, and The Padival Grand Puttur
               </a>
             </h3>
             <p>
@@ -249,25 +249,25 @@ export default function Projects() {
           </article>
           <article
             className="project"
-            data-cat="ppc"
-            hidden={filter !== "all" && filter !== "ppc"}
+            data-cat="ppc full"
+            hidden={filter !== "all" && filter !== "ppc" && filter !== "full"}
           >
             <div className="project-top">
-              <span className="eyetag">{"Real Estate · Lead Generation"}</span>
+              <span className="eyetag">{"Real Estate · Marketing & Lead Generation"}</span>
               <span className="pr-icon">{"↗"}</span>
             </div>
             <h3>
               {
-                "Atmos Tropical, Kattu Construction, The Right Life & Ganga Enterprises"
+                "Atmos Tropical, Kattu Construction, The Right Life, Ganga Enterprises, Amantran Developers & Property Trade"
               }
             </h3>
             <p>
               {
-                "Paid lead-generation programmes oriented around both enquiry volume and physical site visits."
+                "Real estate marketing and lead generation focused on enquiries and site visits, with broader campaign support for Amantran Developers and Property Trade."
               }
             </p>
             <div className="project-bottom">
-              <strong>{"~400 leads & ~50–60 site visits per client"}</strong>
+              <strong>{"~400 leads & ~50–60 site visits per lead-generation client (reported)"}</strong>
               <div className="project-links"></div>
             </div>
           </article>
@@ -414,36 +414,6 @@ export default function Projects() {
             hidden={filter !== "all" && filter !== "full"}
           >
             <div className="project-top">
-              <span className="eyetag">Real Estate · 360° Growth</span>
-              <span className="pr-icon" aria-hidden="true">✳</span>
-            </div>
-            <h3>Amantran Developers</h3>
-            <p>Marketing support for a real estate developer, focused on discoverability, demand and campaign execution.</p>
-            <div className="project-bottom">
-              <strong>Real estate marketing</strong>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="full"
-            hidden={filter !== "all" && filter !== "full"}
-          >
-            <div className="project-top">
-              <span className="eyetag">Real Estate · 360° Growth</span>
-              <span className="pr-icon" aria-hidden="true">✳</span>
-            </div>
-            <h3>Property Trade</h3>
-            <p>Marketing support for a property business, focused on discoverability, demand and campaign execution.</p>
-            <div className="project-bottom">
-              <strong>Property marketing</strong>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="full"
-            hidden={filter !== "all" && filter !== "full"}
-          >
-            <div className="project-top">
               <span className="eyetag">Gold Retail &amp; Jewellery Sector (B2C)</span>
               <span className="pr-icon" aria-hidden="true">✳</span>
             </div>
@@ -452,6 +422,18 @@ export default function Projects() {
             <div className="project-bottom">
               <strong>B2C jewellery marketing</strong>
             </div>
+          </article>
+          <article
+            className="project"
+            data-cat="ppc full"
+            hidden={filter !== "all" && filter !== "ppc" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">Education · Marketing &amp; PR</span>
+              <span className="pr-icon" aria-hidden="true">↗</span>
+            </div>
+            <h3>SPOCO, Sparda Degree College &amp; Akash Educational Institutions</h3>
+            <p>Lead generation, marketing and public relations to build awareness and attract enquiries.</p>
           </article>
         </div>
       </div>
