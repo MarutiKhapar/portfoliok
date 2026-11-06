@@ -163,6 +163,30 @@ export default function Projects() {
           </article>
           <article
             className="project"
+            data-cat="ppc full"
+            hidden={filter !== "all" && filter !== "ppc" && filter !== "full"}
+          >
+            <div className="project-top">
+              <span className="eyetag">{"Real Estate · Marketing & Lead Generation"}</span>
+              <span className="pr-icon">{"↗"}</span>
+            </div>
+            <h3>
+              {
+                "Atmos Tropical, Kattu Construction, The Right Life, Ganga Enterprises, Amantran Developers & Property Trade"
+              }
+            </h3>
+            <p>
+              {
+                "Real estate marketing and lead generation focused on enquiries and site visits, with broader campaign support for Amantran Developers and Property Trade."
+              }
+            </p>
+            <div className="project-bottom">
+              <strong>{"~400 leads & ~50–60 site visits per lead-generation client (reported)"}</strong>
+              <div className="project-links"></div>
+            </div>
+          </article>
+          <article
+            className="project"
             data-cat="seo"
             hidden={filter !== "all" && filter !== "seo"}
           >
@@ -249,30 +273,6 @@ export default function Projects() {
           </article>
           <article
             className="project"
-            data-cat="ppc full"
-            hidden={filter !== "all" && filter !== "ppc" && filter !== "full"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"Real Estate · Marketing & Lead Generation"}</span>
-              <span className="pr-icon">{"↗"}</span>
-            </div>
-            <h3>
-              {
-                "Atmos Tropical, Kattu Construction, The Right Life, Ganga Enterprises, Amantran Developers & Property Trade"
-              }
-            </h3>
-            <p>
-              {
-                "Real estate marketing and lead generation focused on enquiries and site visits, with broader campaign support for Amantran Developers and Property Trade."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"~400 leads & ~50–60 site visits per lead-generation client (reported)"}</strong>
-              <div className="project-links"></div>
-            </div>
-          </article>
-          <article
-            className="project"
             data-cat="ppc"
             hidden={filter !== "all" && filter !== "ppc"}
           >
@@ -330,26 +330,6 @@ export default function Projects() {
             </p>
             <div className="project-bottom">
               <strong>{"4–6× reported revenue / ad spend"}</strong>
-              <div className="project-links"></div>
-            </div>
-          </article>
-          <article
-            className="project"
-            data-cat="full"
-            hidden={filter !== "all" && filter !== "full"}
-          >
-            <div className="project-top">
-              <span className="eyetag">{"D2C · Brand & Social"}</span>
-              <span className="pr-icon">{"✳"}</span>
-            </div>
-            <h3>{"21iice"}</h3>
-            <p>
-              {
-                "Social media creative and visual design for a Japanese-style ice cream brand."
-              }
-            </p>
-            <div className="project-bottom">
-              <strong>{"End-to-end social media design"}</strong>
               <div className="project-links"></div>
             </div>
           </article>
@@ -434,6 +414,16 @@ export default function Projects() {
             </div>
             <h3>SPOCO, Sparda Degree College &amp; Akash Educational Institutions</h3>
             <p>Lead generation, marketing and public relations to build awareness and attract enquiries.</p>
+            <div className="project-bottom">
+              <div className="project-links">
+                <a href="https://spoco.org/" target="_blank" rel="noopener noreferrer">
+                  SPOCO website <span aria-hidden="true">↗</span>
+                </a>
+                <a href="https://www.akashinstitutions.in/" target="_blank" rel="noopener noreferrer">
+                  Akash Educational Institutions website <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
           </article>
         </div>
       </div>
